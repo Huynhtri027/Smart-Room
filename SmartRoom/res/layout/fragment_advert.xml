@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:background="#d7e7ff"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+
+        <Button
+            android:id="@+id/advertProperty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:padding="10dp"
+            android:background="@drawable/advert_custom"
+            android:drawableLeft="@drawable/ic_advertise_house"
+            android:gravity="center"
+            android:text="Advertise Property"
+            android:textColor="#fff" />
+        
+        <Button
+            android:id="@+id/advertMe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:padding="10dp"
+            android:background="@drawable/advert_custom"
+            android:drawableLeft="@drawable/ic_advertise_me"
+            android:gravity="center"
+            android:text="Advertise Myself"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+</RelativeLayout>

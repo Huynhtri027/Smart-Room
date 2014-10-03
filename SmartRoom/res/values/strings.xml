@@ -1,0 +1,85 @@
+<resources>
+
+    <string name="app_name">Smart Room</string>
+    <string name="load">Loading...</string>
+    <string name="app_id">338142736356855</string>
+    <string name="property_advert">Place Advert about Property</string>
+    <string name="advert_me">Place Advert about Myself</string>
+    <string name="logged_user">Member Activity</string>
+    <string name="auth_user">Redirecting... </string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="desc_list_item_icon">Item Icon</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    <string name="currLocation">Use Current Location</string>
+    <string name="customLocation">Specify a Location</string>
+    <string name="welcome">Welcome To Smart Room Search</string>
+    <string name="hSearch">Search House</string>
+    <string name="pSearch">Search People</string>
+    <string name="appDescription">Free APP, to search House Property, Home Seeker Profiles and place Adverts.
+Note: If you want to place an advert please use the options below</string>
+    <string name="copyright">© Copyright 2014 Copyright TAE Ltd
+All Rights are Reserved</string>
+    <string name="login">Login</string>
+    <string name="register">Create Account</string>
+    <string name="searchHint">Address, Postcode or #Ad Reference</string>
+    <string name="aboutUs">The App Experts is the leading mobile app development agency headquartered in London. We specialise in iOS, Android and cross-platform solutions. With over 20,000 mobile development hours accumulated, it’s safe to say we know apps best.
+We also understand the importance of providing a customer centric service, so we’ve created a Mobile Methodology that champions efficiency and creativity to save time and money for clients just like you.</string>
+    <string name="whyUs">1. Pricing: We’ve perfected our business operations so we can focus on yours. We’ll work with you to make sure you get the most out of your budget.
+2. Expertise: Our U.K. based team of more than 25 mobile app experts collectively has more than 20,000 project hours completed.
+3. Problem Solving: We know what it takes to crack your biggest challenges.
+4. Excellence: We’re perfectionists at heart. Your satisfaction is our number one priority.
+5. Transparency: We believe honest business works best. That’s why we provide pricing quotes up front so there are no surprises.
+6. Convenience: While many of our clients are here in the U.K., we also work with clients across the E.U.</string>
+    <string name="contact">Thank you for your interest in Mobile App Services from The App Experts.  Please either ring us at the number listed below or check us on the Web.</string>
+
+    <string-array name="sellerType">
+        <item>Agency</item>
+        <item>Private</item>
+        <item>Any</item>
+    </string-array>
+    <string-array name="propertyType">
+        <item>Single</item>
+        <item>Double</item>
+        <item>Twin</item>
+        <item>Triple</item>
+        <item>Roomshare</item>
+        <item>Flats/Appartments</item>
+        <item>House</item>
+        <item>Commercial</item>
+        <item>Farms/Land</item>
+        <item>Bungalows</item>
+        <item>Any</item>
+    </string-array>
+    <string-array name="addedDate">
+        <item>Last 24 Hours</item>
+        <item>Last 3 Hours</item>
+        <item>Last 7 Days</item>
+        <item>Last 14 Days</item>
+        <item>Last 30 Days</item>
+        <item>Any</item>
+    </string-array>
+    <string-array name="sortBy">
+        <item>Most Recent First</item>
+        <item>Most Popular</item>
+        <item>Highest Price</item>
+        <item>Lowest Price</item>
+    </string-array>
+    <string-array name="priceFrequency">
+        <item>Per Calendar Month</item>
+        <item>Per Week</item>
+    </string-array>
+    <string-array name="furnishing">
+        <item>Furnished</item>
+        <item>Partly Furnished</item>
+        <item>Unfurnished</item>
+    </string-array>
+    <string-array name="titles">
+        <item>Mr.</item>
+        <item>Ms.</item>
+        <item>Mrs.</item>
+        <item>Miss</item>
+    </string-array>
+
+</resources>

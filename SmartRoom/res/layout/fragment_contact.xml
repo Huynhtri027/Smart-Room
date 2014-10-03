@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/contact" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#111"
+                android:padding="5dp"
+                android:text="By Phone"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="0203 691 7065" />
+            
+
+             <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#111"
+                android:padding="5dp"
+                android:text="Address"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Tower Bridge Business Centre 46 - 48 East Smithfield, London,  E1W 1AW" />
+            
+            
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#111"
+                android:padding="5dp"
+                android:text="Website"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="http://theappexperts.co.uk/" />
+            
+            
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

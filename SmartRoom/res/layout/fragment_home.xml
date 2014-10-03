@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d7e7ff"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="@string/welcome"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#e60072" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="10dp" >
+
+            <RadioButton
+                android:id="@+id/radio0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/currLocation" />
+
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/customLocation" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/searchLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/searchHint"
+            android:visibility="gone" >
+        </EditText>
+
+        <Button
+            android:id="@+id/houseSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/home_search_custom"
+            android:drawableLeft="@drawable/house_search"
+            android:gravity="center"
+            android:text="@string/hSearch"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/peopleSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/people_search_custom"
+            android:drawableLeft="@drawable/user_search"
+            android:gravity="center"
+            android:text="@string/pSearch"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="@string/appDescription"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#0042ff" />
+
+        <Button
+            android:id="@+id/homeLoginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/custom_button_border"
+            android:gravity="center"
+            android:text="@string/login"
+            android:textColor="#fff" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_margin="5dp"
+            android:background="#111" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="or"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_margin="5dp"
+            android:background="#111" />
+
+        <Button
+            android:id="@+id/homeCreateAccountButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/custom_button_border"
+            android:gravity="center"
+            android:text="@string/register"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="@string/copyright"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/content_frame_logged_user"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start" >
+
+        <!-- Header aligned to top -->
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="#fff"
+            android:gravity="center" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/loggedUserPic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="42dp"
+                    android:maxWidth="42dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/no_pic" />
+
+                <TextView
+                    android:id="@+id/loggedUserFullName"
+                    style="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Unknown Unknown" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Footer aligned to bottom -->
+
+        <RelativeLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#FC0"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/logoutSession"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ff2200"
+                android:textColor="#fff"
+                android:text="Logout" />
+        </RelativeLayout>
+
+        <!-- Scrollable Item below header and above footer -->
+
+        <RelativeLayout
+            android:id="@+id/scrollableContents"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/footer"
+            android:layout_below="@id/header"
+            android:background="#005" >
+
+            <ListView
+                android:id="@+id/left_drawer"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="@color/list_background"
+                android:choiceMode="singleChoice"
+                android:divider="@color/list_divider"
+                android:dividerHeight="1dp"
+                android:listSelector="@drawable/list_selector"
+                android:scrollbars="none" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>

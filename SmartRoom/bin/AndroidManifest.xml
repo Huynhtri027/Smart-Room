@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.smartroom"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+        <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.smartroom.SplashScreen"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.smartroom.activity.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.smartroom.activity.AdvertPropertyActivity"
+            android:label="@string/property_advert" >
+        </activity>
+        <activity
+            android:name="com.smartroom.activity.AdvertMyselfActivity"
+            android:label="@string/advert_me" >
+        </activity>
+        <activity
+            android:name="com.smartroom.activity.MemberActivity"
+            android:label="@string/logged_user" >
+        </activity>
+        <activity
+            android:name="com.smartroom.social_auth.FacebookLogin"
+            android:label="@string/auth_user" >
+        </activity>
+        <activity
+            android:name="com.smartroom.social_auth.GooglePlus"
+            android:label="@string/auth_user" >
+        </activity>
+        <activity
+            android:name="com.smartroom.social_auth.TwitterLogin"
+            android:label="@string/auth_user" >
+        </activity>
+        <activity
+            android:name="com.smartroom.social_auth.LinkedinLogin"
+            android:label="@string/auth_user" >
+        </activity>
+        
+        <activity
+            android:name="com.smartroom.activity.CapturePictureActivity"
+            android:label="Take Picture" >
+        </activity>
+        <activity
+            android:name="com.smartroom.activity.BrowsePictureActivity"
+            android:label="Browse Picture" >
+        </activity>
+        
+        
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="338142736356855" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCqK5ecCNKEDQalfCdmKdbVFApNwxFr80s" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="4323000" />
+    </application>
+
+</manifest>
