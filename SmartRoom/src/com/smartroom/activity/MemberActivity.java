@@ -8,9 +8,11 @@ import android.app.FragmentTransaction;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -34,13 +36,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.smartroom.R;
+import com.smartroom.controller.CheckNewMessageController;
 import com.smartroom.controller.FragmentManagerHelper;
 import com.smartroom.controller.ItemAdapter;
 import com.smartroom.controller.SessionController;
 import com.smartroom.model.Item;
 import com.smartroom.model.MemberMenu;
+import com.smartroom.model.PendingMessageModel;
 import com.smartroom.model.UserProfile;
 import com.smartroom.service.GPSTrackerService;
+import com.smartroom.service.MessageHandlerService;
 import com.smartroom.utilities.Utils;
 import com.smartroom.view.AboutFragment;
 import com.smartroom.view.ContactFragment;
@@ -65,12 +70,15 @@ public class MemberActivity extends FragmentActivity {
 	Button logoutSession = null;
 	ImageView profilePic = null;
 	TextView profileName = null;
-	static int mNotificationCount = 0;
+	public static int mNotificationCount = 0;
 
 	Fragment fr = null;
 	int count = 0;
 	boolean verifyLogout = false;
 	UserProfile userProfile = null;
+	private Intent messageIntent = null;
+	private String approveNotification = null;
+	public static ArrayList<PendingMessageModel> pendingMessageList = new ArrayList<PendingMessageModel>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +95,16 @@ public class MemberActivity extends FragmentActivity {
 		Utils.setMainContext(MemberActivity.this);
 
 		FragmentManagerHelper.setUserStatus(true);
+
+		netReceiver = new MessageCheckReciver();
+
+		IntentFilter filter = new IntentFilter();
+		filter.addAction("statusUpdate");
+		registerReceiver(netReceiver, filter);
+
+		messageIntent = new Intent(getApplicationContext(),
+				MessageHandlerService.class);
+		startService(messageIntent);
 
 		setupView();
 
@@ -161,7 +179,10 @@ public class MemberActivity extends FragmentActivity {
 
 				if (menu.getText().toString().equals("Messages")) {
 
-					MemberActivity.notifyMessage();
+					// MemberActivity.notifyMessage();
+					Toast.makeText(Utils.getCurrentActivity(),
+							"Functionality Not Yet Done!", Toast.LENGTH_LONG)
+							.show();
 
 				} else if (menu.getText().toString().equals("Search")) {
 
@@ -377,6 +398,11 @@ public class MemberActivity extends FragmentActivity {
 								} catch (Exception e) {
 									Log.e("Pic Url: ", "" + e.getMessage());
 								}
+								try {
+									unregisterReceiver(netReceiver);
+								} catch (Exception e) {
+								}
+								stopService(messageIntent);
 								Intent intent = new Intent(MemberActivity.this,
 										MainActivity.class);
 								intent.putExtra("logout", true);
@@ -412,7 +438,7 @@ public class MemberActivity extends FragmentActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	public static void notifyMessage() {
+	public static void notifyMessage(final PendingMessageModel response) {
 
 		final Intent mNotificationIntent;
 		final PendingIntent mContentIntent;
@@ -420,31 +446,32 @@ public class MemberActivity extends FragmentActivity {
 		final CharSequence contentText = "New Message Received";
 		final int MY_NOTIFICATION_ID = 1;
 
-
 		// Notification Sound and Vibration on Arrival
-		final Uri soundURI = Uri
-			.parse("android.resource://com.smartroom/raw/"
-					+ R.raw.alarm_rooster);
+		final Uri soundURI = Uri.parse("android.resource://com.smartroom/raw/"
+				+ R.raw.notification_sound);
 		final long[] mVibratePattern = { 0, 200, 200, 300 };
 
-		RemoteViews mContentView = new RemoteViews(
-				"com.smartroom",
+		RemoteViews mContentView = new RemoteViews("com.smartroom",
 				R.layout.custom_notification);
 
+		pendingMessageList.add(response);
+
 		mNotificationIntent = new Intent(Utils.getCurrentActivity(),
-				AdvertMyselfActivity.class);
+				ViewNotificationActivity.class);
+
+		mNotificationIntent.putExtra("key", pendingMessageList);
+
 		mContentIntent = PendingIntent.getActivity(Utils.getCurrentActivity(),
 				0, mNotificationIntent, Intent.FLAG_ACTIVITY_NEW_TASK);
 
 		mContentView.setTextViewText(R.id.text, contentText + " ("
 				+ ++mNotificationCount + ")");
-		
+
 		Notification.Builder notificationBuilder = new Notification.Builder(
 				Utils.getCurrentActivity()).setTicker(tickerText)
-				.setSmallIcon(R.drawable.ic_launcher)
-				.setAutoCancel(true).setContentIntent(mContentIntent)
-			.setSound(soundURI).setVibrate(mVibratePattern)
-				.setContent(mContentView);
+				.setSmallIcon(R.drawable.ic_launcher).setAutoCancel(true)
+				.setContentIntent(mContentIntent).setSound(soundURI)
+				.setVibrate(mVibratePattern).setContent(mContentView);
 
 		// Pass the Notification to the NotificationManager:
 		NotificationManager mNotificationManager = (NotificationManager) Utils
@@ -453,4 +480,41 @@ public class MemberActivity extends FragmentActivity {
 		mNotificationManager.notify(MY_NOTIFICATION_ID,
 				notificationBuilder.build());
 	}
+
+	class MessageCheckReciver extends BroadcastReceiver {
+
+		@Override
+		public void onReceive(Context arg0, Intent arg1) {
+			// TODO Auto-generated method stub
+			try {
+
+				PendingMessageModel response = (PendingMessageModel) arg1
+						.getSerializableExtra("messageStatus");
+
+				if (response.isNotification()) {
+					
+					approveNotification = null;
+					
+					approveNotification = CheckNewMessageController
+							.approveNotificationMessage(response);
+
+					if (approveNotification.equals("1")) {
+						displayDialog(response);
+					}
+
+				}
+			}
+
+			catch (Exception e) {
+				Log.e("error", e.toString());
+			}
+
+		}
+	}
+
+	public void displayDialog(final PendingMessageModel response) {
+		MemberActivity.notifyMessage(response);
+	}
+
+	MessageCheckReciver netReceiver;
 }

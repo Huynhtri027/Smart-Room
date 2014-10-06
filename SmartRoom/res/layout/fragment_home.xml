@@ -51,7 +51,7 @@
         </EditText>
 
         <Button
-            android:id="@+id/houseSearch"
+            android:id="@+id/homeHouseSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -62,7 +62,7 @@
             android:textColor="#fff" />
 
         <Button
-            android:id="@+id/peopleSearch"
+            android:id="@+id/homePeopleSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -124,9 +124,10 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
+            android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/copyright"
             android:textAppearance="?android:attr/textAppearanceSmall" />

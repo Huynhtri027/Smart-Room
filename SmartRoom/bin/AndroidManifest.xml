@@ -4,8 +4,7 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk
-        android:minSdkVersion="14" />
+    <uses-sdk android:minSdkVersion="16" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,10 +12,13 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
     <uses-permission android:name="android.permission.VIBRATE" />
-        <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -65,7 +67,6 @@
             android:name="com.smartroom.social_auth.LinkedinLogin"
             android:label="@string/auth_user" >
         </activity>
-        
         <activity
             android:name="com.smartroom.activity.CapturePictureActivity"
             android:label="Take Picture" >
@@ -74,8 +75,21 @@
             android:name="com.smartroom.activity.BrowsePictureActivity"
             android:label="Browse Picture" >
         </activity>
-        
-        
+        <activity
+            android:name="com.smartroom.activity.SearchHouseActivity"
+            android:label="Property Search Result" >
+        </activity>
+        <activity
+            android:name="com.smartroom.activity.ViewAdvertActivity"
+            android:label="View Advert" >
+        </activity>
+        <activity
+            android:name="com.smartroom.activity.ViewNotificationActivity"
+            android:label="View Notifications" >
+        </activity>
+
+        <service android:name="com.smartroom.service.MessageHandlerService" >
+        </service>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

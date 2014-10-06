@@ -1,5 +1,10 @@
 package com.smartroom.view;
 
+import org.json.JSONException;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,15 +20,17 @@ import android.widget.Toast;
 import com.smartroom.R;
 import com.smartroom.controller.AdvertController;
 import com.smartroom.model.HouseProperty;
+import com.smartroom.utilities.Utils;
 
 public class PropertyAdvertStep3Fragment extends Fragment {
 
 	private View parentView;
 	private Button propertyAdvertPostAdvertBtn = null;
-	private EditText advertTitle, advertDescription,
-			advertiserFullName, advertiserTelephone;
+	private EditText advertTitle, advertDescription, advertiserFullName,
+			advertiserTelephone;
 	private CheckBox displayName, displayTel;
 	private Spinner advertiserTitle = null;
+	private Bitmap bitmap = null;
 
 	boolean postAdvertCheck = true;
 
@@ -70,19 +77,24 @@ public class PropertyAdvertStep3Fragment extends Fragment {
 			@Override
 			public void onClick(View arg0) {
 
+
 				if (verifyAdvert()) {
 					newHouse = new HouseProperty();
 
-					newHouse.setAddress(PropertyAdvertStep2Fragment.propertyAdvertAddressTxt
-							.getText().toString());
+					newHouse.setAdvertiserTitle(advertiserTitle
+							.getSelectedItem().toString());
+					newHouse.setAdvertTtile(advertTitle.getText().toString());
+
 					newHouse.setAdvertDescription(advertDescription.getText()
 							.toString());
 					newHouse.setAdvertiserFullName(advertiserFullName.getText()
 							.toString());
 					newHouse.setAdvertiserTelephone(advertiserTelephone
 							.getText().toString());
-					newHouse.setAdvertiserTitle(advertiserTitle.getSelectedItem()
-							.toString());
+
+					newHouse.setAddress(PropertyAdvertStep2Fragment.propertyAdvertAddressTxt
+							.getText().toString());
+
 					newHouse.setAvailabilityDate(PropertyAdvertStep2Fragment.propertyAdvertDateTxt
 							.getText().toString());
 					newHouse.setBalconyAvailable(PropertyAdvertStep2Fragment.propertyAdvertBalcony
@@ -121,10 +133,26 @@ public class PropertyAdvertStep3Fragment extends Fragment {
 							.getText().toString());
 					newHouse.setSellerType(PropertyAdvertStep1Fragment.sellerType
 							.getSelectedItem().toString());
-					
-					AdvertController.postHouseProperty(newHouse);
-					
-					
+
+					if (PropertyAdvertStep2Fragment.propertyAdvertPicImg == null) {
+						bitmap = BitmapFactory.decodeResource(getResources(),
+								R.drawable.ic_launcher);
+					} else {
+						BitmapDrawable drawable = (BitmapDrawable) PropertyAdvertStep2Fragment.propertyAdvertPicImg
+								.getDrawable();
+						bitmap = drawable.getBitmap();
+					}
+
+					newHouse.setHousePic(bitmap);
+
+					try {
+						Utils.setCurrentActivity(getActivity());
+						AdvertController.postHouseProperty(newHouse);
+					} catch (JSONException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
 				}
 
 			}

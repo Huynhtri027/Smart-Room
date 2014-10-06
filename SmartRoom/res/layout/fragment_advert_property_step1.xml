@@ -56,7 +56,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="No of Beds" />
+                    android:hint="No of Beds"
+                    android:inputType="number" />
                 
                                 <TextView
                     android:id="@+id/TextView01"
@@ -105,7 +106,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="Rent Amount" />
+                    android:hint="Rent Amount"
+                    android:inputType="number" />
             </LinearLayout>
             
             <LinearLayout
@@ -146,7 +148,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="Deposit Amount" />
+                    android:hint="Deposit Amount"
+                    android:inputType="number" />
             </LinearLayout>
 
             

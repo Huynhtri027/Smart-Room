@@ -86,6 +86,7 @@ public class FacebookLogin extends Activity {
 		public void onExecute(String arg0, Profile profile) {
 			// TODO Auto-generated method stub
 
+
 			userProfile = new UserProfile();
 
 			userProfile.setId(profile.getValidatedId());

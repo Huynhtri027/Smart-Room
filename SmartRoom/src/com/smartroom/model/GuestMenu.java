@@ -36,6 +36,13 @@ public class GuestMenu {
 		newItem.setIcon(resources.getDrawable(R.drawable.ic_preference));
 		guestMenu.add(newItem);
 		
+		
+		newItem = new Item();
+		newItem.setMenuTitle("Share App");
+		newItem.setCounterVisible(false);
+		newItem.setIcon(resources.getDrawable(R.drawable.ic_share));
+		guestMenu.add(newItem);
+		
 		newItem = new Item();
 		newItem.setMenuTitle("Rate App");
 		newItem.setCounterVisible(false);

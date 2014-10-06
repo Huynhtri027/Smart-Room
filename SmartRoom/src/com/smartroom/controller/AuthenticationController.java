@@ -27,8 +27,8 @@ public class AuthenticationController {
 	private static JSONObject jresponse;
 
 	public static void checkLogin(final String email, final String password) {
-		final ProgressDialog pDialog = new ProgressDialog(
-				Utils.getCurrentActivity());
+		
+		final ProgressDialog pDialog = new ProgressDialog(Utils.getCurrentActivity());
 		pDialog.setMessage("Logging In ...");
 		pDialog.show();
 
@@ -56,7 +56,7 @@ public class AuthenticationController {
 							} else {
 
 								Toast.makeText(Utils.getMainContext(),
-										"Login Successful", Toast.LENGTH_LONG)
+										"Login Successful", Toast.LENGTH_SHORT)
 										.show();
 
 								userProfile.setEmail(jresponse

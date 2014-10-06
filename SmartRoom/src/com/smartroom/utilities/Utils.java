@@ -1,5 +1,6 @@
 package com.smartroom.utilities;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -10,18 +11,34 @@ import java.util.Locale;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.smartroom.R;
 
 public class Utils {
 
 	private static InputMethodManager imm = null;
 	public static Context mainContext = null;
-	public static String loginUrl = "http://10.0.16.26/smartroom/verify_user.php";
-	public static String registerUrl = "http://10.0.16.26/smartroom/create_user.php";
+	public static String loginUrl = "http://192.168.1.5/smartroom/verify_user.php";
+	public static String registerUrl = "http://192.168.1.5/smartroom/create_user.php";
+	public static String saveAdvertUrl = "http://192.168.1.5/smartroom/advert_house.php";
+	public static String searchPropertytUrl = "http://192.168.1.5/smartroom/search_property.php";
+	public static String sendMessagetUrl = "http://192.168.1.5/smartroom/save_advert_message.php";
+	public static String checkMessagetUrl = "http://192.168.1.5/smartroom/check_message.php";
+	public static String approveMessagetUrl = "http://192.168.1.5/smartroom/approve_message_notification.php";
+	public static String getPropertyByIDtUrl = "http://192.168.1.5/smartroom/get_house_by_ref_id.php";
+
+	public static String testUrl = "http://192.168.1.5/smartroom/test.php";
+
 	public static Activity currentActivity = null;
 
 	public static Activity getCurrentActivity() {
@@ -78,6 +95,24 @@ public class Utils {
 		return dir.delete();
 	}
 
+	public static BitmapDescriptor getBitmapDescriptor(Context context) {
+
+		final BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+		bmOptions.inSampleSize = 8;
+		BitmapDescriptor bd = null;
+
+		Bitmap bm = MediaStore.Images.Thumbnails.getThumbnail(
+				context.getContentResolver(), R.drawable.ic_map_marker,
+				MediaStore.Images.Thumbnails.MINI_KIND, bmOptions);
+		if (bm != null) {
+			bd = BitmapDescriptorFactory.fromBitmap(bm);
+			if (bd != null) {
+
+			}
+		}
+		return bd;
+	}
+
 	public static Bitmap getFacebookProfilePicture(String userID) {
 
 		Bitmap bitmap = null;
@@ -114,5 +149,31 @@ public class Utils {
 		}
 		Collections.sort(countries, String.CASE_INSENSITIVE_ORDER);
 		return countries;
-	}	
+	}
+
+	public static byte[] getBytes(Bitmap bitmap) {
+		ByteArrayOutputStream stream = new ByteArrayOutputStream();
+		bitmap.compress(CompressFormat.PNG, 0, stream);
+		return stream.toByteArray();
+	}
+
+	public static Bitmap stringToBitmap(String imageString) {
+		byte[] encodeByte = Base64.decode(imageString, Base64.DEFAULT);
+		return BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+	}
+
+	public static String bitmapToString(Bitmap imageBitmap) {
+		ByteArrayOutputStream stream = new ByteArrayOutputStream();
+		imageBitmap.compress(Bitmap.CompressFormat.JPEG, 90, stream);
+
+		byte[] byte_arr = stream.toByteArray();
+
+		String imageString = Base64.encodeToString(byte_arr, Base64.DEFAULT);
+		return imageString;
+	}
+
+	public static Bitmap getPhoto(byte[] image) {
+		return BitmapFactory.decodeByteArray(image, 0, image.length);
+	}
+
 }

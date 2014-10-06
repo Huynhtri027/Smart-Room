@@ -1,15 +1,27 @@
 package com.smartroom.model;
 
+import android.graphics.Bitmap;
+
 public class HouseProperty {
 
-	private String sellerType, bedNum, propertyType, rentAmount,
-			priceFrequency, depositAmount;
-	private String postcode, address, country, furnishing, availabilityDate;
-	private String advertiserTitle, advertTtile, advertDescription,
-			advertiserFullName, advertiserTelephone;
-	private boolean referenceRequired, parkingAvailable, gardenAvailable,
-			garageAvailable, balconyAvailable, disabledAcessAvailable,
-			broadband, billIncluded, displayFullName, displayTelephone;
+	private String sellerType = "", bedNum = "", propertyType = "", rentAmount = "",
+			priceFrequency = "", depositAmount = "";
+	private String postcode = "", address = "", country = "", furnishing = "", availabilityDate = "";
+	private String advertiserTitle = "", advertTtile = "", advertDescription = "",
+			advertiserFullName = "", advertiserTelephone = "";
+	private boolean referenceRequired = false, parkingAvailable = false, gardenAvailable = false,
+			garageAvailable = false, balconyAvailable = false, disabledAcessAvailable = false,
+			broadband = false, billIncluded = false, displayFullName = false, displayTelephone = false;
+
+	private Bitmap housePic = null;
+	
+	public Bitmap getHousePic() {
+		return housePic;
+	}
+
+	public void setHousePic(Bitmap housePic) {
+		this.housePic = housePic;
+	}
 
 	public String getSellerType() {
 		return sellerType;

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"/>
+    <item
+        android:id="@+id/call_advertiser"
+        android:icon="@android:drawable/ic_menu_call"
+        android:orderInCategory="100"
+        android:showAsAction="always"/>
+    <item
+        android:id="@+id/send_message"
+        android:icon="@drawable/ic_message"
+        android:orderInCategory="100"
+        android:showAsAction="always"/>
+    <item
+        android:id="@+id/save_ad"
+        android:icon="@android:drawable/ic_menu_save"
+        android:orderInCategory="100"
+        android:showAsAction="always"/>
+    <item
+        android:id="@+id/share_advert"
+        android:icon="@android:drawable/ic_menu_share"
+        android:orderInCategory="100"
+        android:showAsAction="always"/>
+
+</menu>

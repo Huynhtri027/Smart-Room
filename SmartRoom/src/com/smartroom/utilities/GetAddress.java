@@ -4,13 +4,20 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
+import com.smartroom.model.LatitudeLocationModel;
+
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.util.Log;
 import android.widget.Toast;
 
 public class GetAddress {
+
+	private static LatitudeLocationModel LatLon = null;
 
 	public static void showAddress(Context context, double latitude,
 			double longitude) {
@@ -40,8 +47,8 @@ public class GetAddress {
 
 				}
 			}
-			Toast.makeText(context,"PostCode: " + zipcode,
-					Toast.LENGTH_SHORT).show();
+			Toast.makeText(context, "PostCode: " + zipcode, Toast.LENGTH_SHORT)
+					.show();
 			Log.i("[ Addresses ] ", "Address: " + address + ", PostCode: "
 					+ zipcode + ", City: " + city + ", State: " + state
 					+ "\nFull Address: " + addr);
@@ -52,27 +59,30 @@ public class GetAddress {
 
 	}
 
-	public static String getAreaCode(Context context, double latitude,
-			double longitude) {
+	public static LatitudeLocationModel postcodeToLatLon(Context mContext,
+			String postcode) {
 
-		String areaCode = null;
+		LatLon = new LatitudeLocationModel();
 
-		Geocoder geoCoder = new Geocoder(context, Locale.getDefault());
+		final Geocoder geocoder = new Geocoder(mContext);
+
 		try {
-			List<Address> addresses = geoCoder.getFromLocation(latitude,
-					longitude, 1);
+			List<Address> addresses = geocoder.getFromLocationName(postcode, 1);
 
-			String add = "";
-			if (addresses.size() > 0) {
-				for (int i = 0; i < addresses.get(0).getMaxAddressLineIndex(); i++) {
-					add += addresses.get(0).getAddressLine(i) + "\n";
-					areaCode = addresses.get(0).getAddressLine(i);
-				}
+			if (addresses != null && !addresses.isEmpty()) {
+				Address address = addresses.get(0);
+
+				LatLon.setLatitude(address.getLatitude());
+				LatLon.setLongitude(address.getLongitude());
+
+			} else {
+				Toast.makeText(mContext, "Unable to geocode Post Code",
+						Toast.LENGTH_LONG).show();
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
-		return areaCode;
+
+		return LatLon;
 	}
 
 }

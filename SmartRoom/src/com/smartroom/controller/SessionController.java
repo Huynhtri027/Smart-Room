@@ -17,8 +17,16 @@ public class SessionController {
 	private static Profile socialProfile = null;
 	public static SocialAuthAdapter adapter = null;
 	public static Provider socialProvider = null;
-
 	
+	public static boolean userStatus = false;	
+
+	public static boolean isUserStatus() {
+		return userStatus;
+	}
+
+	public static void setUserStatus(boolean userStatus) {
+		SessionController.userStatus = userStatus;
+	}
 
 	public static Provider getSocialProvider() {
 		return socialProvider;
@@ -59,6 +67,8 @@ public class SessionController {
 		SharedPreferences.Editor editor = app_preferences.edit();
 		editor.putBoolean("Online Status", true);
 		editor.commit();
+		SessionController.setUserStatus(true);
+		
 	}
 
 	public static void sessionStop(Context context) {
@@ -68,6 +78,7 @@ public class SessionController {
 		SharedPreferences.Editor editor = app_preferences.edit();
 		editor.putBoolean("Online Status", false);
 		editor.commit();
+		SessionController.setUserStatus(false);
 	}
 
 }

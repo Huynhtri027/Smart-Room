@@ -6,6 +6,7 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -38,6 +39,7 @@ public class LoginFragment extends Fragment {
 				.inflate(R.layout.fragment_login, container, false);
 		setUpViews();
 
+		Utils.setCurrentActivity(getActivity());
 		loginAndRegisterEvents();
 		socialAppLogin();
 		return parentView;
@@ -50,14 +52,13 @@ public class LoginFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				
+
 				boolean netCheck = Utils.isNetworkAvailable(getActivity());
-				if(netCheck) {
+				if (netCheck) {
 					Intent intent = new Intent(getActivity()
 							.getApplicationContext(), FacebookLogin.class);
 					startActivity(intent);
-				}
-				else {
+				} else {
 					transaction = getFragmentManager().beginTransaction();
 					FragmentManagerHelper.setFragmentTransaction(transaction);
 
@@ -66,8 +67,8 @@ public class LoginFragment extends Fragment {
 					FragmentManagerHelper.replaceFragment(newFragment);
 					FragmentManagerHelper.setCurrentFragment(newFragment);
 					FragmentManagerHelper.setFragmentType("NORMAL");
-				}			
-				
+				}
+
 			}
 		});
 
@@ -77,19 +78,18 @@ public class LoginFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				boolean netCheck = Utils.isNetworkAvailable(getActivity());
-				if(netCheck) {
-					
+				if (netCheck) {
+
 					Toast.makeText(getActivity().getApplicationContext(),
 							"Functionality, Partially Completed",
 							Toast.LENGTH_LONG).show();
 					return;
-					
-//					Intent intent = new Intent(getActivity()
-//							.getApplicationContext(), GooglePlus.class);
-//					startActivity(intent);
-					
-				}
-				else {
+
+					// Intent intent = new Intent(getActivity()
+					// .getApplicationContext(), GooglePlus.class);
+					// startActivity(intent);
+
+				} else {
 					transaction = getFragmentManager().beginTransaction();
 					FragmentManagerHelper.setFragmentTransaction(transaction);
 
@@ -107,14 +107,13 @@ public class LoginFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				
+
 				boolean netCheck = Utils.isNetworkAvailable(getActivity());
-				if(netCheck) {
+				if (netCheck) {
 					Intent intent = new Intent(getActivity()
 							.getApplicationContext(), TwitterLogin.class);
 					startActivity(intent);
-				}
-				else {
+				} else {
 					transaction = getFragmentManager().beginTransaction();
 					FragmentManagerHelper.setFragmentTransaction(transaction);
 
@@ -133,17 +132,17 @@ public class LoginFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				
+
 				boolean netCheck = Utils.isNetworkAvailable(getActivity());
-				if(netCheck) {
-					Toast.makeText(getActivity()
-							.getApplicationContext(), "Functionality, Partially Completed", Toast.LENGTH_LONG).show(); 
+				if (netCheck) {
+					Toast.makeText(getActivity().getApplicationContext(),
+							"Functionality, Partially Completed",
+							Toast.LENGTH_LONG).show();
 					return;
 					// Intent intent = new Intent(getActivity()
 					// .getApplicationContext(), LinkedinLogin.class);
 					// startActivity(intent);
-				}
-				else {
+				} else {
 					transaction = getFragmentManager().beginTransaction();
 					FragmentManagerHelper.setFragmentTransaction(transaction);
 
@@ -183,12 +182,17 @@ public class LoginFragment extends Fragment {
 					final String password = passTxt.getText().toString();
 
 					boolean netCheck = Utils.isNetworkAvailable(getActivity());
-					if(netCheck) {
-						AuthenticationController.checkLogin(email, password);
-					}
-					else {
+					if (netCheck) {
+						try {
+							AuthenticationController
+									.checkLogin(email, password);
+						} catch (Exception e) {
+							Log.e("Error Login: ", e.getMessage().toString());
+						}
+					} else {
 						transaction = getFragmentManager().beginTransaction();
-						FragmentManagerHelper.setFragmentTransaction(transaction);
+						FragmentManagerHelper
+								.setFragmentTransaction(transaction);
 
 						newFragment = new NoNetwork();
 
@@ -217,7 +221,8 @@ public class LoginFragment extends Fragment {
 
 				newFragment = new RegisterFragment();
 
-				FragmentManagerHelper.replaceFragmentWithoutAnimation(newFragment);
+				FragmentManagerHelper
+						.replaceFragmentWithoutAnimation(newFragment);
 				FragmentManagerHelper.setCurrentFragment(newFragment);
 				FragmentManagerHelper.setFragmentType("NORMAL");
 			}
