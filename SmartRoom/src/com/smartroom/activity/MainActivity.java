@@ -34,6 +34,7 @@ import com.smartroom.view.AskToLoginFragment;
 import com.smartroom.view.ContactFragment;
 import com.smartroom.view.HelpFragment;
 import com.smartroom.view.HomeFragment;
+import com.smartroom.view.NoNetwork;
 import com.smartroom.view.PreferenceFragment;
 
 public class MainActivity extends Activity {
@@ -225,17 +226,41 @@ public class MainActivity extends Activity {
 	@SuppressWarnings("unused")
 	private void addFragment(Fragment targetFragment) {
 
-		getFragmentManager().beginTransaction()
-				.add(R.id.content_frame, targetFragment, "fragment")
-				.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-				.commit();
+		boolean netCheck = Utils.isNetworkAvailable(Utils.getCurrentActivity());
+		if (netCheck) {
+			getFragmentManager()
+					.beginTransaction()
+					.add(R.id.content_frame, targetFragment, "fragment")
+					.setTransitionStyle(
+							FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
+		} else {
+			transaction.setCustomAnimations(R.animator.bounce_in_down,
+					R.animator.slide_out_down);
+			transaction.replace(R.id.content_frame, new NoNetwork());
+			transaction
+					.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+			transaction.commit();
+		}
 	}
 
 	private void changeFragment(Fragment targetFragment) {
-		getFragmentManager().beginTransaction()
-				.replace(R.id.content_frame, targetFragment, "fragment")
-				.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-				.commit();
+
+		boolean netCheck = Utils.isNetworkAvailable(Utils.getCurrentActivity());
+		if (netCheck) {
+			getFragmentManager()
+					.beginTransaction()
+					.replace(R.id.content_frame, targetFragment, "fragment")
+					.setTransitionStyle(
+							FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
+		} else {
+			transaction.setCustomAnimations(R.animator.bounce_in_down,
+					R.animator.slide_out_down);
+			transaction.replace(R.id.content_frame, new NoNetwork());
+			transaction
+					.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+			transaction.commit();
+		}
+
 	}
 
 	@Override

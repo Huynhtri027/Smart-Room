@@ -31,6 +31,7 @@ public class CheckNewMessageController {
 					@Override
 					public void onResponse(String response) {
 
+						pendingMessage = null;
 						pendingMessage = new PendingMessageModel();
 
 						try {

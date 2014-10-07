@@ -2,9 +2,10 @@ package com.smartroom.controller;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.Context;
 
 import com.smartroom.R;
+import com.smartroom.utilities.Utils;
+import com.smartroom.view.NoNetwork;
 
 /**
  * @author TheAppExpert-Fillipo
@@ -14,7 +15,7 @@ public class FragmentManagerHelper {
 
 	public static Fragment currentFragment = null;
 	public static Fragment currentLoggedUserFragment = null;
-	
+
 	public static Fragment getCurrentLoggedUserFragment() {
 		return currentLoggedUserFragment;
 	}
@@ -63,39 +64,71 @@ public class FragmentManagerHelper {
 	}
 
 	public static void replaceFragment(Fragment oldFragment) {
-		if(FragmentManagerHelper.isUserStatus()) {
-			transaction.replace(R.id.content_frame_logged_user, oldFragment);
-			transaction
-					.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-			transaction.commit();
+
+		boolean netCheck = Utils.isNetworkAvailable(Utils.getCurrentActivity());
+		if (netCheck) {
+			if (FragmentManagerHelper.isUserStatus()) {
+				transaction
+						.replace(R.id.content_frame_logged_user, oldFragment);
+				transaction
+						.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+				transaction.commit();
+			} else {
+				transaction.setCustomAnimations(R.animator.bounce_in_down,
+						R.animator.slide_out_down);
+				transaction.replace(R.id.content_frame, oldFragment);
+				transaction
+						.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+				transaction.commit();
+			}
+		} else {
+
+			if (FragmentManagerHelper.isUserStatus()) {
+				transaction.setCustomAnimations(R.animator.bounce_in_down,
+						R.animator.slide_out_down);
+				transaction.replace(R.id.content_frame_logged_user,
+						new NoNetwork());
+				transaction
+						.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+				transaction.commit();
+			} else {
+				transaction.setCustomAnimations(R.animator.bounce_in_down,
+						R.animator.slide_out_down);
+				transaction.replace(R.id.content_frame, new NoNetwork());
+				transaction
+						.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+				transaction.commit();
+			}
 		}
-		else {
+
+	}
+
+	public static void replaceFragmentWithoutAnimation(Fragment oldFragment) {
+
+		boolean netCheck = Utils.isNetworkAvailable(Utils.getCurrentActivity());
+		if (netCheck) {
+			if (FragmentManagerHelper.isUserStatus()) {
+				transaction
+						.replace(R.id.content_frame_logged_user, oldFragment);
+				transaction
+						.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+				transaction.commit();
+			} else {
+				transaction.replace(R.id.content_frame, oldFragment);
+				transaction
+						.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+				transaction.commit();
+			}
+		} else {
 			transaction.setCustomAnimations(R.animator.bounce_in_down,
 					R.animator.slide_out_down);
-			transaction.replace(R.id.content_frame, oldFragment);
+			transaction.replace(R.id.content_frame, new NoNetwork());
 			transaction
 					.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 			transaction.commit();
 		}
-		
+
 	}
-	
-	public static void replaceFragmentWithoutAnimation(Fragment oldFragment) {
-		if(FragmentManagerHelper.isUserStatus()) {
-			transaction.replace(R.id.content_frame_logged_user, oldFragment);
-			transaction
-					.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-			transaction.commit();
-		}
-		else {
-			transaction.replace(R.id.content_frame, oldFragment);
-			transaction
-					.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-			transaction.commit();
-		}
-		
-	}
-	
 
 	public static void removeFragment(Fragment oldFragment) {
 		transaction.remove(oldFragment).commit();

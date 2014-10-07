@@ -40,12 +40,13 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <EditText
-                    android:id="@+id/EditText01"
+                    android:id="@+id/preferenceMinPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="No Min" />
+                    android:hint="No Min"
+                    android:inputType="number" />
             </LinearLayout>
 
             <LinearLayout
@@ -61,12 +62,13 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <EditText
-                    android:id="@+id/loginEmail"
+                    android:id="@+id/preferenceMaxPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="No Max" >
+                    android:hint="No Max"
+                    android:inputType="number" >
                 </EditText>
             </LinearLayout>
 
@@ -93,12 +95,13 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <EditText
-                    android:id="@+id/EditText03"
+                    android:id="@+id/preferenceMinBed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="No Min" />
+                    android:hint="No Min"
+                    android:inputType="number" />
             </LinearLayout>
 
             <LinearLayout
@@ -114,12 +117,13 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <EditText
-                    android:id="@+id/EditText02"
+                    android:id="@+id/preferenceMaxBed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="No Max" >
+                    android:hint="No Max"
+                    android:inputType="number" >
                 </EditText>
             </LinearLayout>
 
@@ -146,7 +150,7 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <Spinner
-                    android:id="@+id/spinner1"
+                    android:id="@+id/preferenceSellerType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -166,7 +170,7 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <Spinner
-                    android:id="@+id/spinner1"
+                    android:id="@+id/preferencePropertyType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -186,12 +190,13 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <EditText
-                    android:id="@+id/EditText02"
+                    android:id="@+id/preferenceSearchDistance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:text="5000" >
+                    android:text="5000"
+                    android:inputType="number" >
                 </EditText>
             </LinearLayout>
 
@@ -208,7 +213,7 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <Spinner
-                    android:id="@+id/spinner1"
+                    android:id="@+id/preferenceAddedDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -228,7 +233,7 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <Spinner
-                    android:id="@+id/spinner1"
+                    android:id="@+id/preferenceSortBy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -248,7 +253,7 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <Spinner
-                    android:id="@+id/spinner1"
+                    android:id="@+id/preferencePriceFrequency"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -256,7 +261,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/savePreference"
+                android:id="@+id/preferenceSave"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"

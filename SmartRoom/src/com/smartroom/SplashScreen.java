@@ -1,7 +1,6 @@
 package com.smartroom;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,7 +13,8 @@ import com.smartroom.activity.MemberActivity;
 
 public class SplashScreen extends Activity {
 
-	private ProgressBar spinner;
+	private ProgressBar spinner = null;
+
 	Handler handler = new Handler();
 	int progressStatus = 0;
 
@@ -23,7 +23,7 @@ public class SplashScreen extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_splash);
 
-		spinner = (ProgressBar) findViewById(R.id.progressBar1);
+		spinner = (ProgressBar) this.findViewById(R.id.progressBar1);
 
 		new Thread(new Runnable() {
 
@@ -47,20 +47,20 @@ public class SplashScreen extends Activity {
 					});
 				}
 
-				SharedPreferences app_preferences = PreferenceManager.getDefaultSharedPreferences(SplashScreen.this);
+				SharedPreferences app_preferences = PreferenceManager
+						.getDefaultSharedPreferences(SplashScreen.this);
 
-
-				boolean isUserLoggedIn = app_preferences.getBoolean("Online Status",
-						false);
+				boolean isUserLoggedIn = app_preferences.getBoolean(
+						"Online Status", false);
 
 				if (isUserLoggedIn) {
-					final Intent mainIntent = new Intent(
-							SplashScreen.this, MemberActivity.class);
+					final Intent mainIntent = new Intent(SplashScreen.this,
+							MemberActivity.class);
 					SplashScreen.this.startActivity(mainIntent);
 					SplashScreen.this.finish();
 				} else {
-					final Intent mainIntent = new Intent(
-							SplashScreen.this, MainActivity.class);
+					final Intent mainIntent = new Intent(SplashScreen.this,
+							MainActivity.class);
 					SplashScreen.this.startActivity(mainIntent);
 					SplashScreen.this.finish();
 				}

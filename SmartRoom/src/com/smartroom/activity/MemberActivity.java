@@ -55,6 +55,7 @@ import com.smartroom.view.HomeFragment;
 import com.smartroom.view.SearchFragment;
 import com.smartroom.view.SelectAdvertFragment;
 import com.smartroom.view.SettingsFragment;
+import com.smartroom.view.ViewMessagesFragment;
 
 public class MemberActivity extends FragmentActivity {
 
@@ -179,10 +180,12 @@ public class MemberActivity extends FragmentActivity {
 
 				if (menu.getText().toString().equals("Messages")) {
 
-					// MemberActivity.notifyMessage();
-					Toast.makeText(Utils.getCurrentActivity(),
-							"Functionality Not Yet Done!", Toast.LENGTH_LONG)
-							.show();
+					newFragment = new ViewMessagesFragment();
+
+					FragmentManagerHelper.replaceFragment(newFragment);
+					FragmentManagerHelper
+							.setCurrentLoggedUserFragment(newFragment);
+					FragmentManagerHelper.setFragmentType("NORMAL");
 
 				} else if (menu.getText().toString().equals("Search")) {
 
@@ -492,9 +495,9 @@ public class MemberActivity extends FragmentActivity {
 						.getSerializableExtra("messageStatus");
 
 				if (response.isNotification()) {
-					
+
 					approveNotification = null;
-					
+
 					approveNotification = CheckNewMessageController
 							.approveNotificationMessage(response);
 

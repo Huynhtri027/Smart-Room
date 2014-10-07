@@ -1,6 +1,8 @@
 package com.smartroom.activity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,9 +29,14 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.smartroom.R;
+import com.smartroom.controller.DBHelper;
 import com.smartroom.controller.HouseSearchResultAdapter;
+import com.smartroom.controller.SessionController;
+import com.smartroom.model.FilterPreferenceModel;
+import com.smartroom.model.MessageModel;
 import com.smartroom.model.PropertySearchResultModel;
 import com.smartroom.utilities.Utils;
 
@@ -41,17 +48,25 @@ public class SearchHouseActivity extends Activity {
 	private RequestQueue mQueue;
 	private PropertySearchResultModel newResult = null;
 	JSONArray results;
+	private JSONObject jresponse;
 	private TextView houseSearchResultCount = null;
+	private DBHelper dbHelper = null;
+	private FilterPreferenceModel preference = null;
 
 	ImageButton refresh = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_house_search_result);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+
+		dbHelper = new DBHelper(SearchHouseActivity.this);
+		dbHelper.open();
+		this.preference = dbHelper.retrivePreferences();
+		dbHelper.close();
 
 		setUpViews();
 
@@ -63,21 +78,24 @@ public class SearchHouseActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> a, View v, int position,
 					long id) {
-				TextView referenceNumber = (TextView) v.findViewById(R.id.searchHouseReferenceNumber);
+				TextView referenceNumber = (TextView) v
+						.findViewById(R.id.searchHouseReferenceNumber);
 
 				String refId = referenceNumber.getText().toString();
-				
-				Intent viewAdvert = new Intent(SearchHouseActivity.this, ViewAdvertActivity.class);
+
+				Intent viewAdvert = new Intent(SearchHouseActivity.this,
+						ViewAdvertActivity.class);
 				viewAdvert.putExtra("advertReference", refId);
 				startActivity(viewAdvert);
-				
-				
+
 			}
 		});
 
 	}
 
 	public void fetchPropertyResult() {
+
+		houseSearchResultCount.setText("Found Result: 0");
 
 		mQueue = Volley.newRequestQueue(SearchHouseActivity.this);
 
@@ -86,21 +104,25 @@ public class SearchHouseActivity extends Activity {
 		pDialog.setMessage("Fetching Property Result....");
 		pDialog.setCancelable(true);
 		pDialog.show();
-		
-		JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-				Request.Method.GET, Utils.searchPropertytUrl, null,
-				new Response.Listener<JSONObject>() {
+
+		StringRequest postRequest = new StringRequest(Request.Method.POST,
+				Utils.searchPropertytUrl, new Response.Listener<String>() {
 					@Override
-					public void onResponse(JSONObject json) {
+					public void onResponse(String response) {
 
 						try {
-							int success = json.getInt("success");
+							jresponse = new JSONObject(response);
 
-							Log.e("error", "here 1");
-							
-							if (success == 1) {
+							if (jresponse.getString("success").equals("0")) {
+								Toast.makeText(Utils.getMainContext(),
+										"Sorry No Property Result Found!",
+										Toast.LENGTH_LONG).show();
+								pDialog.hide();
+								return;
+							} else {
 
-								results = json.getJSONArray("property_adverts");
+								results = jresponse
+										.getJSONArray("property_adverts");
 
 								for (int i = 0; i < results.length(); i++) {
 
@@ -136,30 +158,57 @@ public class SearchHouseActivity extends Activity {
 									newResult.setSearchTitle(tempAdvertTitle);
 
 									// searchResult.add(newResult);
-									
+
 									adapter.add(newResult);
 									adapter.notifyDataSetChanged();
 									houseSearchResultCount
 											.setText("Found Result: " + (i + 1));
+
 								}
 
 							}
 
 						} catch (JSONException e) {
+							Log.e("Volley Error", e.getMessage());
 							e.printStackTrace();
 						}
+
 						pDialog.hide();
+
 					}
 				}, new Response.ErrorListener() {
 					@Override
 					public void onErrorResponse(VolleyError error) {
-						Toast.makeText(SearchHouseActivity.this,
-								"Error " + error.toString(), Toast.LENGTH_LONG)
-								.show();
+						Toast.makeText(
+								Utils.getCurrentActivity(),
+								"Sorry there was a problem while fetching Property Search Results!",
+								Toast.LENGTH_LONG).show();
+						pDialog.hide();
 					}
-				});
+				}) {
+			@Override
+			protected Map<String, String> getParams() {
+				Map<String, String> params = new HashMap<String, String>();
 
-		mQueue.add(jsonObjectRequest);
+				params.put("minPrice", preference.getMinPrice());
+				params.put("maxPrice", preference.getMaxPrice());
+				params.put("minBed", preference.getMinBed());
+				params.put("maxBed", preference.getMaxBed());
+				params.put("sellerType", preference.getSellerType());
+				params.put("propertyType", preference.getPropertyType());
+				params.put("searchDistance", preference.getSearchDistance());
+				params.put("addedDate", preference.getAddedDate());
+				params.put("sortBy", preference.getSortBy());
+				params.put("priceFrequency", preference.getPriceFrequency());
+
+				Log.e("TAG_FILIPPO", "Min Price: "
+						+ preference.getMinPrice().toString());
+
+				return params;
+			}
+		};
+
+		mQueue.add(postRequest);
 	}
 
 	private void setUpViews() {

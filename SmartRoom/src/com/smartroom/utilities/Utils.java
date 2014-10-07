@@ -28,16 +28,19 @@ public class Utils {
 
 	private static InputMethodManager imm = null;
 	public static Context mainContext = null;
-	public static String loginUrl = "http://192.168.1.5/smartroom/verify_user.php";
-	public static String registerUrl = "http://192.168.1.5/smartroom/create_user.php";
-	public static String saveAdvertUrl = "http://192.168.1.5/smartroom/advert_house.php";
-	public static String searchPropertytUrl = "http://192.168.1.5/smartroom/search_property.php";
-	public static String sendMessagetUrl = "http://192.168.1.5/smartroom/save_advert_message.php";
-	public static String checkMessagetUrl = "http://192.168.1.5/smartroom/check_message.php";
-	public static String approveMessagetUrl = "http://192.168.1.5/smartroom/approve_message_notification.php";
-	public static String getPropertyByIDtUrl = "http://192.168.1.5/smartroom/get_house_by_ref_id.php";
+	public static String loginUrl = "http://10.0.16.26/smartroom/verify_user.php";
+	public static String registerUrl = "http://10.0.16.26/smartroom/create_user.php";
+	public static String saveAdvertUrl = "http://10.0.16.26/smartroom/advert_house.php";
+	public static String searchPropertytUrl = "http://10.0.16.26/smartroom/search_property.php";
+	public static String sendMessagetUrl = "http://10.0.16.26/smartroom/save_advert_message.php";
+	public static String checkMessagetUrl = "http://10.0.16.26/smartroom/check_message.php";
+	public static String approveMessagetUrl = "http://10.0.16.26/smartroom/approve_message_notification.php";
+	public static String getPropertyByIDtUrl = "http://10.0.16.26/smartroom/get_house_by_ref_id.php";
+	public static String getMessagesUrl = "http://10.0.16.26/smartroom/get_messages.php";
 
-	public static String testUrl = "http://192.168.1.5/smartroom/test.php";
+	
+	
+	public static String testUrl = "http://10.0.16.26/smartroom/test.php";
 
 	public static Activity currentActivity = null;
 
