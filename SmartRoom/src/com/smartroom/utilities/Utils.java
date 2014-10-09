@@ -37,6 +37,8 @@ public class Utils {
 	public static String approveMessagetUrl = "http://10.0.16.26/smartroom/approve_message_notification.php";
 	public static String getPropertyByIDtUrl = "http://10.0.16.26/smartroom/get_house_by_ref_id.php";
 	public static String getMessagesUrl = "http://10.0.16.26/smartroom/get_messages.php";
+	
+	public static String picUrl = "http://10.0.16.26/smartroom/images/";
 
 	
 	

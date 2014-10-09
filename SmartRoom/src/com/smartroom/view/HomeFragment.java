@@ -17,15 +17,19 @@ import com.smartroom.R;
 import com.smartroom.activity.MainActivity;
 import com.smartroom.activity.SearchHouseActivity;
 import com.smartroom.controller.FragmentManagerHelper;
+import com.smartroom.service.GPSTrackerService;
 import com.smartroom.utilities.Utils;
 
 public class HomeFragment extends Fragment {
 	private View parentView;
 	private RadioButton radioCurrLocation = null;
 	private RadioButton radioCustLocation = null;
+	private RadioButton radioAllLocation = null;
 	public static EditText searchLocation = null;
+	private String searchQuery = null;
 	private Button loginBtn = null, registerBtn = null, searchProperty,
 			searchPeople;
+	private EditText search = null;
 	MainActivity parentActivity = null;
 
 	@Override
@@ -41,6 +45,8 @@ public class HomeFragment extends Fragment {
 
 		parentActivity = (MainActivity) getActivity();
 
+		search = (EditText) parentView.findViewById(R.id.homesearchLocation);
+
 		searchProperty = (Button) parentView.findViewById(R.id.homeHouseSearch);
 
 		searchProperty.setOnClickListener(new OnClickListener() {
@@ -48,6 +54,11 @@ public class HomeFragment extends Fragment {
 			public void onClick(View v) {
 				Intent searchHouseIntent = new Intent(getActivity(),
 						SearchHouseActivity.class);
+				searchQuery = getSearchQuery();
+				if (searchQuery.equals("NO")) {
+					return;
+				}
+				searchHouseIntent.putExtra("searchValue", searchQuery);
 				getActivity().startActivity(searchHouseIntent);
 			}
 		});
@@ -56,32 +67,59 @@ public class HomeFragment extends Fragment {
 		searchPeople.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+
+				GPSTrackerService gpsTracker = new GPSTrackerService(
+						getActivity());
+				gpsTracker.getLatitude();
+				gpsTracker.getLongitude();
+
+				Toast.makeText(
+						getActivity(),
+						"Latitude: " + gpsTracker.getLatitude()
+								+ " Longitude: " + gpsTracker.getLongitude(),
+						Toast.LENGTH_SHORT).show();
+
 				Toast.makeText(getActivity(), "No Functionality Added Yet!",
-						Toast.LENGTH_LONG).show();
+						Toast.LENGTH_SHORT).show();
 			}
 		});
 
-		radioCurrLocation = (RadioButton) parentView.findViewById(R.id.radio0);
+		radioCurrLocation = (RadioButton) parentView.findViewById(R.id.currRadio);
 		radioCurrLocation.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 
 				searchLocation = (EditText) parentView
-						.findViewById(R.id.searchLocation);
+						.findViewById(R.id.homesearchLocation);
+				searchLocation.setText("");
 				searchLocation.setVisibility(View.GONE);
 				Utils.hideKeyboard(parentActivity.getApplicationContext(),
 						searchLocation);
 			}
 		});
 
-		radioCustLocation = (RadioButton) parentView.findViewById(R.id.radio1);
+		radioCustLocation = (RadioButton) parentView.findViewById(R.id.customRadio);
 		radioCustLocation.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				searchLocation = (EditText) parentView
-						.findViewById(R.id.searchLocation);
+						.findViewById(R.id.homesearchLocation);
+				searchLocation.setText("");
 				searchLocation.setVisibility(View.VISIBLE);
 				Utils.showKeyboard(parentActivity.getApplicationContext(),
+						searchLocation);
+			}
+		});
+
+		radioAllLocation = (RadioButton) parentView.findViewById(R.id.allRadio);
+		radioAllLocation.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				searchLocation = (EditText) parentView
+						.findViewById(R.id.homesearchLocation);
+				searchLocation.setText("");
+				searchLocation.setVisibility(View.GONE);
+				Utils.hideKeyboard(parentActivity.getApplicationContext(),
 						searchLocation);
 			}
 		});
@@ -125,6 +163,22 @@ public class HomeFragment extends Fragment {
 			}
 		});
 
+	}
+
+	public String getSearchQuery() {
+		if (radioAllLocation.isChecked()) {
+			searchQuery = "";
+		} else if (radioCurrLocation.isChecked()) {
+			Toast.makeText(
+					getActivity(),
+					"Functionality Partially Completed! Not working at the Moment.",
+					Toast.LENGTH_LONG).show();
+			searchQuery = "NO";
+		} else if (radioCustLocation.isChecked()) {
+			searchQuery = search.getText().toString();
+		}
+
+		return searchQuery;
 	}
 
 }

@@ -1,9 +1,18 @@
 package com.smartroom.activity;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -13,8 +22,10 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -26,6 +37,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,16 +49,20 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.smartroom.R;
 import com.smartroom.controller.AdvertController;
 import com.smartroom.controller.SessionController;
 import com.smartroom.model.HouseProperty;
 import com.smartroom.model.LatitudeLocationModel;
+import com.smartroom.service.GPSTrackerService;
+import com.smartroom.utilities.DirectionsJSONParser;
 import com.smartroom.utilities.GetAddress;
 import com.smartroom.utilities.Utils;
 
@@ -67,9 +83,12 @@ public class ViewAdvertActivity extends Activity {
 
 	private HouseProperty viewProperty = null;
 	private GoogleMap map;
+	private ArrayList<LatLng> markerPoints;
+	private static String mode = "walking";
 
 	LatitudeLocationModel postcodeLocation = null;
 	Handler handler = new Handler();
+	Spinner sp = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -219,6 +238,8 @@ public class ViewAdvertActivity extends Activity {
 								new LatLng(postcodeLocation.getLatitude(),
 										postcodeLocation.getLongitude())));
 
+				addMakerEvent();
+
 			} else {
 				Toast.makeText(ViewAdvertActivity.this,
 						"Unable to create Map!", Toast.LENGTH_SHORT).show();
@@ -226,6 +247,98 @@ public class ViewAdvertActivity extends Activity {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	private void addMakerEvent() {
+		map.setOnMarkerClickListener(new OnMarkerClickListener() {
+
+			@Override
+			public boolean onMarkerClick(Marker marker) {
+
+				Toast.makeText(
+						ViewAdvertActivity.this,
+						"Navigation start from your current location to "
+								+ marker.getTitle(), Toast.LENGTH_SHORT).show();
+
+				double currLatitude = 0.0;
+				double currLongitude = 0.0;
+
+				try {
+					GPSTrackerService gps = new GPSTrackerService(
+							ViewAdvertActivity.this);
+					currLatitude = (double) gps.getLatitude();
+					currLongitude = (double) gps.getLongitude();
+				} catch (Exception e) {
+					currLatitude = 51.5088655;
+					currLongitude = -0.0690414000000601;
+				}
+
+				if (markerPoints.size() > 1) {
+					markerPoints.clear();
+					map.clear();
+				}
+
+				LatLng sourcepoint = new LatLng(currLatitude, currLongitude);
+				LatLng destpoint = new LatLng(postcodeLocation.getLatitude(),
+						postcodeLocation.getLongitude());
+				markerPoints.add(sourcepoint);
+				markerPoints.add(destpoint);
+
+				MarkerOptions options = new MarkerOptions();
+
+				// Setting the position of the marker
+				options.position(sourcepoint);
+
+				if (markerPoints.size() == 1) {
+					options.icon(BitmapDescriptorFactory
+							.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+				} else if (markerPoints.size() == 2) {
+					options.icon(BitmapDescriptorFactory
+							.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+				}
+
+				map.addMarker(options);
+
+				if (markerPoints.size() >= 2) {
+
+					LatLng origin = markerPoints.get(0);
+					LatLng dest = markerPoints.get(1);
+
+					askMode(origin, dest);
+
+				}
+
+				return false;
+			}
+
+			private void askMode(final LatLng origin, final LatLng dest) {
+				final Dialog dialog = new Dialog(ViewAdvertActivity.this);
+				dialog.setContentView(R.layout.route_option);
+				sp = (Spinner) dialog.findViewById(R.id.viewSpin);
+				Button ok = (Button) dialog.findViewById(R.id.search_mode);
+				ok.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						mode = sp.getSelectedItem().toString();
+
+						// Getting URL to the Google Directions API
+						String url = getDirectionsUrl(origin, dest);
+
+						DownloadTask downloadTask = new DownloadTask();
+
+						// Start downloading json data from Google
+						// Directions
+						// API
+						downloadTask.execute(url);
+						dialog.dismiss();
+					}
+				});
+				dialog.setTitle("Select Option");
+				dialog.show();
+
+			}
+
+		});
 	}
 
 	private void setUpViews() {
@@ -261,6 +374,8 @@ public class ViewAdvertActivity extends Activity {
 		pic = (ImageView) this.findViewById(R.id.viewAdvertPic);
 
 		sv = (ScrollView) findViewById(R.id.viewAdverscrollView);
+
+		markerPoints = new ArrayList<LatLng>();
 
 		RelativeLayout rl = (RelativeLayout) findViewById(R.id.relativeLayout1);
 		rl.setOnTouchListener(new View.OnTouchListener() {
@@ -443,5 +558,164 @@ public class ViewAdvertActivity extends Activity {
 	@Override
 	public void onBackPressed() {
 		finish();
+	}
+
+	private String getDirectionsUrl(LatLng origin, LatLng dest) {
+
+		// Origin of route
+		String str_origin = "origin=" + origin.latitude + ","
+				+ origin.longitude;
+
+		// Destination of route
+		String str_dest = "destination=" + dest.latitude + "," + dest.longitude;
+
+		// Sensor enabled
+		String sensor = "sensor=false";
+
+		// Building the parameters to the web service
+		String parameters = str_origin + "&" + str_dest + "&" + sensor
+				+ "&mode=" + mode;
+
+		// Output format
+		String output = "json";
+
+		// Building the url to the web service
+		String url = "https://maps.googleapis.com/maps/api/directions/"
+				+ output + "?" + parameters;
+		return url;
+	}
+
+	// Fetches data from url passed
+	private class DownloadTask extends AsyncTask<String, Void, String> {
+
+		// Downloading data in non-ui thread
+		@Override
+		protected String doInBackground(String... url) {
+
+			// For storing data from web service
+			String data = "";
+
+			try {
+				// Fetching the data from web service
+				data = downloadUrl(url[0]);
+			} catch (Exception e) {
+				Log.d("Background Task", e.toString());
+			}
+			return data;
+		}
+
+		// Executes in UI thread, after the execution of
+		// doInBackground()
+		@Override
+		protected void onPostExecute(String result) {
+			super.onPostExecute(result);
+
+			ParserTaskDirection parserTask = new ParserTaskDirection();
+
+			// Invokes the thread for parsing the JSON data
+			parserTask.execute(result);
+
+		}
+	}
+
+	/** A class to parse the Google Places in JSON format */
+	private class ParserTaskDirection extends
+			AsyncTask<String, Integer, List<List<HashMap<String, String>>>> {
+
+		// Parsing the data in non-ui thread
+		@Override
+		protected List<List<HashMap<String, String>>> doInBackground(
+				String... jsonData) {
+
+			JSONObject jObject;
+			List<List<HashMap<String, String>>> routes = null;
+
+			try {
+				jObject = new JSONObject(jsonData[0]);
+				DirectionsJSONParser parser = new DirectionsJSONParser();
+
+				// Starts parsing data
+				routes = parser.parse(jObject);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return routes;
+		}
+
+		// Executes in UI thread, after the parsing process
+		@Override
+		protected void onPostExecute(List<List<HashMap<String, String>>> result) {
+			ArrayList<LatLng> points = null;
+			PolylineOptions lineOptions = null;
+			MarkerOptions markerOptions = new MarkerOptions();
+
+			// Traversing through all the routes
+			for (int i = 0; i < result.size(); i++) {
+				points = new ArrayList<LatLng>();
+				lineOptions = new PolylineOptions();
+
+				// Fetching i-th route
+				List<HashMap<String, String>> path = result.get(i);
+
+				// Fetching all the points in i-th route
+				for (int j = 0; j < path.size(); j++) {
+					HashMap<String, String> point = path.get(j);
+
+					double lat = Double.parseDouble(point.get("lat"));
+					double lng = Double.parseDouble(point.get("lng"));
+					LatLng position = new LatLng(lat, lng);
+
+					points.add(position);
+				}
+
+				// Adding all the points in the route to LineOptions
+				lineOptions.addAll(points);
+				lineOptions.width(5);
+				lineOptions.color(Color.MAGENTA);
+
+			}
+
+			// Drawing polyline in the Google Map for the i-th route
+			map.addPolyline(lineOptions);
+		}
+	}
+
+	private String downloadUrl(String strUrl) throws IOException {
+		Log.e("URL", strUrl);
+		String data = "";
+		InputStream iStream = null;
+		HttpURLConnection urlConnection = null;
+		try {
+
+			URL url = new URL(strUrl);
+
+			urlConnection = (HttpURLConnection) url.openConnection();
+
+			urlConnection.connect();
+
+			iStream = urlConnection.getInputStream();
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					iStream));
+
+			StringBuffer sb = new StringBuffer();
+
+			String line = "";
+			while ((line = br.readLine()) != null) {
+				sb.append(line);
+			}
+
+			data = sb.toString();
+
+			br.close();
+
+		} catch (Exception e) {
+			Log.d("Exception while downloading url", e.toString());
+		} finally {
+			iStream.close();
+			urlConnection.disconnect();
+		}
+
+		return data;
 	}
 }

@@ -4,16 +4,13 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-import com.smartroom.model.LatitudeLocationModel;
-
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.smartroom.model.LatitudeLocationModel;
 
 public class GetAddress {
 
@@ -25,7 +22,7 @@ public class GetAddress {
 
 		try {
 			List<Address> addresses = geoCoder.getFromLocation(latitude,
-					longitude, 50);
+					longitude, 1);
 			Address address = null;
 			String addr = "";
 			String zipcode = "";

@@ -18,70 +18,70 @@ public class MemberMenu {
 		
 		newItem = new Item();		
 		
-		newItem.setMenuTitle("Messages");
+		newItem.setMenuTitle(resources.getString(R.string.logged_menu_message));
 		newItem.setCounterVisible(true);
 		newItem.setMessageNumber(1);
 		newItem.setIcon(resources.getDrawable(R.drawable.ic_message));		
 		memberMenu.add(newItem);
 		
 		newItem = new Item();
-		newItem.setMenuTitle("Search");
+		newItem.setMenuTitle(resources.getString(R.string.logged_menu_search));
 		newItem.setCounterVisible(false);
 		newItem.setIcon(resources.getDrawable(R.drawable.ic_search));
 		memberMenu.add(newItem);
 		
 		
 		newItem = new Item();
-		newItem.setMenuTitle("Place Advert");
+		newItem.setMenuTitle(resources.getString(R.string.logged_menu_advert));
 		newItem.setCounterVisible(false);
 		newItem.setIcon(resources.getDrawable(R.drawable.add_advert));
 		memberMenu.add(newItem);
 		
 		newItem = new Item();
-		newItem.setMenuTitle("My Adverts");
+		newItem.setMenuTitle(resources.getString(R.string.logged_menu_myAdverts));
 		newItem.setCounterVisible(false);
 		newItem.setIcon(resources.getDrawable(R.drawable.ic_saved_ad));
 		memberMenu.add(newItem);
 		
 		
 		newItem = new Item();
-		newItem.setMenuTitle("Saved Adverts");
+		newItem.setMenuTitle(resources.getString(R.string.logged_menu_savedAds));
 		newItem.setCounterVisible(false);
 		newItem.setIcon(resources.getDrawable(R.drawable.ic_saved));
 		memberMenu.add(newItem);
 		
 		newItem = new Item();
-		newItem.setMenuTitle("Edit Profile");
+		newItem.setMenuTitle(resources.getString(R.string.logged_menu_edit));
 		newItem.setCounterVisible(false);
 		newItem.setIcon(resources.getDrawable(R.drawable.ic_edit_profile));
 		memberMenu.add(newItem);
 		
 		newItem = new Item();
-		newItem.setMenuTitle("Settings");
+		newItem.setMenuTitle(resources.getString(R.string.logged_menu_preference));
 		newItem.setCounterVisible(false);
 		newItem.setIcon(resources.getDrawable(R.drawable.ic_settings));
 		memberMenu.add(newItem);
 		
 		newItem = new Item();
-		newItem.setMenuTitle("Rate App");
+		newItem.setMenuTitle(resources.getString(R.string.logged_menu_rate));
 		newItem.setCounterVisible(false);
 		newItem.setIcon(resources.getDrawable(R.drawable.ic_rate));
 		memberMenu.add(newItem);
 		
 		newItem = new Item();
-		newItem.setMenuTitle("Help");
+		newItem.setMenuTitle(resources.getString(R.string.logged_menu_help));
 		newItem.setCounterVisible(false);
 		newItem.setIcon(resources.getDrawable(R.drawable.ic_help));
 		memberMenu.add(newItem);
 		
 		newItem = new Item();
-		newItem.setMenuTitle("About Us");
+		newItem.setMenuTitle(resources.getString(R.string.logged_menu_about));
 		newItem.setCounterVisible(false);
 		newItem.setIcon(resources.getDrawable(R.drawable.ic_about));
 		memberMenu.add(newItem);
 		
 		newItem = new Item();
-		newItem.setMenuTitle("Contact Us");
+		newItem.setMenuTitle(resources.getString(R.string.logged_menu_contact));
 		newItem.setCounterVisible(false);
 		newItem.setIcon(resources.getDrawable(R.drawable.ic_contact));
 		memberMenu.add(newItem);

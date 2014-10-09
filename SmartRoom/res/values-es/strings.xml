@@ -1,0 +1,113 @@
+<resources>
+
+    <string name="app_name">Habitación Smart</string>
+    <string name="load">Cargando...</string>
+    <string name="app_id">338142736356855</string>
+    <string name="property_advert">Insertar anuncio sobre la propiedad</string>
+    <string name="advert_me">Colocar Anuncio de mí mismo</string>
+    <string name="logged_user">Actividad miembro</string>
+    <string name="auth_user">Redireccionar... </string>
+    <string name="drawer_open">Abrir el cajón de navegación</string>
+    <string name="drawer_close">Cierre el cajón de navegación</string>
+    <string name="desc_list_item_icon">Icono Elemento</string>
+    <string name="action_websearch">búsqueda web</string>
+    <string name="app_not_available">Lo sentimos, no hay navegador web disponible</string>
+    <string name="currLocation">Utilice Ubicación actual</string>
+    <string name="customLocation">Especificar una ubicación</string>
+    <string name="allLocation">Todas Ubicación</string>
+    <string name="welcome">Bienvenido a Búsqueda Inteligente de habitaciones</string>
+    <string name="hSearch">Buscar Casa</string>
+    <string name="pSearch">Buscador de personas</string>
+    <string name="appDescription">Gratis APP, a la búsqueda Casa Propiedad, Inicio Perfiles candidato y colocar anuncios. 
+Nota: Si desea colocar un anuncio por favor, utilice las opciones de abajo</string>
+    <string name="copyright">© Derecho de Autor Derecho de Autor 2014 TAE Ltd 
+Todos los derechos reservados</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="register">Crear una cuenta</string>
+    <string name="searchHint">Dirección, código postal o #ad Referencia</string>
+    <string name="aboutUs">Los expertos de la aplicación es la agencia de desarrollo de aplicaciones móviles líder con sede en Londres. Nos especializamos en iOS, Android y soluciones de plataforma cruzada. Con más de 20.000 horas de desarrollo móvil acumulados, es seguro decir que sabemos aplicaciones mejor. 
+También entendemos la importancia de ofrecer un servicio centrado en el cliente, por lo que hemos creado una Metodología móvil que la eficiencia y la creatividad campeones para ahorrar tiempo y dinero para los clientes como usted.</string>
+    <string name="whyUs">1. Precios: Hemos perfeccionado nuestras operaciones de negocios por lo que podemos centrarnos en el suyo. Vamos a trabajar con usted para asegurarse de obtener el máximo rendimiento de su presupuesto. 
+2. Experiencia: Nuestro equipo en el Reino Unido de más de 25 expertos de aplicaciones móviles en conjunto cuenta con más de 20.000 horas de proyectos terminados. 
+3. Resolución de Problemas: Sabemos lo que se necesita para romper sus mayores desafíos. 
+4. Excelencia: Somos perfeccionistas en el corazón. Su satisfacción es nuestra prioridad número uno. 
+5. Transparencia: Creemos negocio honesto funciona mejor. Es por eso que ofrecemos cotizaciones de precios por adelantado para que no haya sorpresas. 
+6. Conveniencia: Mientras que muchos de nuestros clientes están aquí en el Reino Unido, también trabajamos con clientes de toda la UE</string>
+    <string name="contact">Gracias por su interés en los servicios móviles de la aplicación de los expertos de la aplicación usted. Le agradecemos que nos suene al número que aparece a continuación o puede visitarnos en la Web.</string>
+
+    <string-array name="sellerType">
+        <item>Agencia</item>
+        <item>Privado</item>
+        <item>Cualquier</item>
+    </string-array>
+    <string-array name="propertyType">
+        <item>Individual</item>
+        <item>Doble</item>
+        <item>Triple</item>
+        <item>Compartidos</item>
+        <item>Pisos / Apartamentos</item>
+        <item>Casa</item>
+        <item>Comercial</item>
+        <item>Fincas / Terrenos</item>
+        <item>Bungalows</item>
+        <item>Cualquier</item>
+    </string-array>
+    <string-array name="addedDate">
+        <item>Últimas 24 Horas</item>
+        <item>Últimos 3 Horas</item>
+        <item>Últimos 7 Días</item>
+        <item>Últimos 14 días</item>
+        <item>Últimos 30 Días</item>
+        <item>Cualquier</item>
+    </string-array>
+    <string-array name="sortBy">
+        <item>Los más recientes primero</item>
+        <item>Los más populares</item>
+        <item>Precio Más Alto</item>
+        <item>Precio Más Bajo</item>
+    </string-array>
+    <string-array name="priceFrequency">
+        <item>Por mes Calendario</item>
+        <item>Por semana</item>
+    </string-array>
+    <string-array name="furnishing">
+        <item>Amueblado</item>
+        <item>Parcialmente Amueblado</item>
+        <item>Sin amueblar</item>
+    </string-array>
+    <string-array name="titles">
+        <item>Sr.</item>
+        <item>Sra.</item>
+        <item>Señorita</item>
+    </string-array>
+
+    <!-- Non Logged User Menu -->
+    <string name="menu_home">Inicio</string>
+    <string name="menu_advert">Lugar del anuncio</string>
+    <string name="menu_preference">Preferencias</string>
+    <string name="menu_share">Compartir App</string>
+    <string name="menu_rate">Cambio App</string>
+    <string name="menu_help">Ayuda</string>
+    <string name="menu_about">Sobre nosotros</string>
+    <string name="menu_contact">Contáctenos</string>
+
+    <!-- Logged User Menu -->
+    <string name="logged_menu_message">Mensajes</string>
+    <string name="logged_menu_search">Búsqueda</string>
+    <string name="logged_menu_advert">Lugar del anuncio</string>
+    <string name="logged_menu_myAdverts">Mis Anuncios</string>
+    <string name="logged_menu_savedAds">Anuncios guardadas</string>
+    <string name="logged_menu_edit">Editar Perfil</string>
+    <string name="logged_menu_preference">Preferencias</string>
+    <string name="logged_menu_rate">Cambio App</string>
+    <string name="logged_menu_help">Ayuda</string>
+    <string name="logged_menu_about">Sobre nosotros</string>
+    <string name="logged_menu_contact">Contáctenos</string>
+    <string name="logged_menu_logout">Salir</string>
+
+    <!-- Other Logged User Properties -->
+
+    <string name="logged_menu_propertyAdvert">Anunciar inmueble</string>
+    <string name="logged_menu_peopleAdvert">Publicidad Mí</string>
+
+</resources>

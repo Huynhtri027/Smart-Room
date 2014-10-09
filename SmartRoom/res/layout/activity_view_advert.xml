@@ -2,9 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity=""
-    android:orientation="vertical"
-     >
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/textView1"
@@ -21,8 +19,7 @@
         android:id="@+id/viewAdverscrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none"
-        android:padding="5dp" >
+        android:scrollbars="none" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,7 +30,6 @@
                 android:id="@+id/viewAdvertPic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:src="@drawable/ic_launcher" />
 
             <LinearLayout
@@ -131,7 +127,7 @@
             <RelativeLayout
                 android:id="@+id/relativeLayout1"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" >
+                android:layout_height="250dp" >
 
                 <fragment
                     android:id="@+id/viewAdvertMap"
@@ -155,7 +151,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_margin="3dp"
                 android:background="@drawable/border"
                 android:orientation="vertical"
                 android:padding="10dp" >
@@ -273,7 +269,6 @@
                 android:id="@+id/textView1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:background="#002c7e"
                 android:gravity="left"
                 android:padding="3dp"
@@ -284,7 +279,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_margin="3dp"
                 android:background="@drawable/border"
                 android:orientation="vertical"
                 android:padding="10dp" >

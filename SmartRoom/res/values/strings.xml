@@ -14,6 +14,7 @@
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
     <string name="currLocation">Use Current Location</string>
     <string name="customLocation">Specify a Location</string>
+    <string name="allLocation">All Location</string>
     <string name="welcome">Welcome To Smart Room Search</string>
     <string name="hSearch">Search House</string>
     <string name="pSearch">Search People</string>
@@ -82,4 +83,48 @@ We also understand the importance of providing a customer centric service, so we
         <item>Miss</item>
     </string-array>
 
+    <!-- Non Logged User Menu -->
+    <string name="menu_home">Home</string>
+    <string name="menu_advert">Place Advert</string>
+    <string name="menu_preference">Preferences</string>
+    <string name="menu_share">Share App</string>
+    <string name="menu_rate">Rate App</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_about">About Us</string>
+    <string name="menu_contact">Contact Us</string>
+
+    <!-- Logged User Menu -->
+    <string name="logged_menu_message">Messages</string>
+    <string name="logged_menu_search">Search</string>
+    <string name="logged_menu_advert">Place Advert</string>
+    <string name="logged_menu_myAdverts">My Adverts</string>
+    <string name="logged_menu_savedAds">Saved Adverts</string>
+    <string name="logged_menu_edit">Edit Profile</string>
+    <string name="logged_menu_preference">Preferences</string>
+    <string name="logged_menu_rate">Rate App</string>
+    <string name="logged_menu_help">Help</string>
+    <string name="logged_menu_about">About Us</string>
+    <string name="logged_menu_contact">Contact Us</string>
+    <string name="logged_menu_logout">Logout</string>
+
+    <!-- Other Logged User Properties -->
+
+    <string name="logged_menu_propertyAdvert">Advertise Property</string>
+    <string name="logged_menu_peopleAdvert">Advertise Myself</string>
+
+    <string-array name="mode">
+        <item>driving</item>
+        <item>walking</item>
+        <item>bicycling</item>
+        <item>transit</item>
+    </string-array>
+
+    <string name="product_name">Product Name</string>
+    <string name="txt_image_slider">Image Slideshow</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="time_out">Time Out</string>
+    <string name="error_occured">Error Occurred</string>
+
+    <string name="bodyText">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería d</string>
+    
 </resources>

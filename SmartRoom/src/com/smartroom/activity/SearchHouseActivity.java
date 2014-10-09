@@ -28,15 +28,12 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.smartroom.R;
 import com.smartroom.controller.DBHelper;
 import com.smartroom.controller.HouseSearchResultAdapter;
-import com.smartroom.controller.SessionController;
 import com.smartroom.model.FilterPreferenceModel;
-import com.smartroom.model.MessageModel;
 import com.smartroom.model.PropertySearchResultModel;
 import com.smartroom.utilities.Utils;
 
@@ -52,6 +49,8 @@ public class SearchHouseActivity extends Activity {
 	private TextView houseSearchResultCount = null;
 	private DBHelper dbHelper = null;
 	private FilterPreferenceModel preference = null;
+	private String searchVal = null;
+	private int count = 0;
 
 	ImageButton refresh = null;
 
@@ -62,6 +61,9 @@ public class SearchHouseActivity extends Activity {
 		setContentView(R.layout.activity_house_search_result);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		Intent intent = getIntent();
+		searchVal = intent.getStringExtra("searchValue");
 
 		dbHelper = new DBHelper(SearchHouseActivity.this);
 		dbHelper.open();
@@ -163,7 +165,14 @@ public class SearchHouseActivity extends Activity {
 									adapter.notifyDataSetChanged();
 									houseSearchResultCount
 											.setText("Found Result: " + (i + 1));
+									count++;
 
+								}
+								if(count == 0) {
+									Toast.makeText(
+											Utils.getCurrentActivity(),
+											"Sorry No Property Search Results Found!",
+											Toast.LENGTH_LONG).show();
 								}
 
 							}
@@ -190,6 +199,7 @@ public class SearchHouseActivity extends Activity {
 			protected Map<String, String> getParams() {
 				Map<String, String> params = new HashMap<String, String>();
 
+				params.put("searchValue", searchVal);
 				params.put("minPrice", preference.getMinPrice());
 				params.put("maxPrice", preference.getMaxPrice());
 				params.put("minBed", preference.getMinBed());
@@ -209,6 +219,7 @@ public class SearchHouseActivity extends Activity {
 		};
 
 		mQueue.add(postRequest);
+		
 	}
 
 	private void setUpViews() {

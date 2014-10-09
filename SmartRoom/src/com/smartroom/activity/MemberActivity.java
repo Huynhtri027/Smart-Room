@@ -52,6 +52,7 @@ import com.smartroom.view.ContactFragment;
 import com.smartroom.view.EditProfileFragment;
 import com.smartroom.view.HelpFragment;
 import com.smartroom.view.HomeFragment;
+import com.smartroom.view.PreferenceFragment;
 import com.smartroom.view.SearchFragment;
 import com.smartroom.view.SelectAdvertFragment;
 import com.smartroom.view.SettingsFragment;
@@ -178,7 +179,10 @@ public class MemberActivity extends FragmentActivity {
 
 				Fragment newFragment = null;
 
-				if (menu.getText().toString().equals("Messages")) {
+				if (menu.getText()
+						.toString()
+						.equals(getResources().getString(
+								R.string.logged_menu_message))) {
 
 					newFragment = new ViewMessagesFragment();
 
@@ -187,7 +191,11 @@ public class MemberActivity extends FragmentActivity {
 							.setCurrentLoggedUserFragment(newFragment);
 					FragmentManagerHelper.setFragmentType("NORMAL");
 
-				} else if (menu.getText().toString().equals("Search")) {
+				} else if (menu
+						.getText()
+						.toString()
+						.equals(getResources().getString(
+								R.string.logged_menu_search))) {
 
 					newFragment = new SearchFragment();
 
@@ -196,7 +204,11 @@ public class MemberActivity extends FragmentActivity {
 							.setCurrentLoggedUserFragment(newFragment);
 					FragmentManagerHelper.setFragmentType("NORMAL");
 
-				} else if (menu.getText().toString().equals("Place Advert")) {
+				} else if (menu
+						.getText()
+						.toString()
+						.equals(getResources().getString(
+								R.string.logged_menu_advert))) {
 
 					newFragment = new SelectAdvertFragment();
 
@@ -205,7 +217,11 @@ public class MemberActivity extends FragmentActivity {
 							.setCurrentLoggedUserFragment(newFragment);
 					FragmentManagerHelper.setFragmentType("NORMAL");
 
-				} else if (menu.getText().toString().equals("My Adverts")) {
+				} else if (menu
+						.getText()
+						.toString()
+						.equals(getResources().getString(
+								R.string.logged_menu_myAdverts))) {
 
 					newFragment = new HelpFragment();
 
@@ -216,7 +232,11 @@ public class MemberActivity extends FragmentActivity {
 
 				}
 
-				else if (menu.getText().toString().equals("Saved Adverts")) {
+				else if (menu
+						.getText()
+						.toString()
+						.equals(getResources().getString(
+								R.string.logged_menu_savedAds))) {
 
 					newFragment = new HelpFragment();
 
@@ -227,7 +247,11 @@ public class MemberActivity extends FragmentActivity {
 
 				}
 
-				else if (menu.getText().toString().equals("Edit Profile")) {
+				else if (menu
+						.getText()
+						.toString()
+						.equals(getResources().getString(
+								R.string.logged_menu_edit))) {
 
 					newFragment = new EditProfileFragment();
 
@@ -238,15 +262,23 @@ public class MemberActivity extends FragmentActivity {
 
 				}
 
-				else if (menu.getText().toString().equals("Settings")) {
+				else if (menu
+						.getText()
+						.toString()
+						.equals(getResources().getString(
+								R.string.logged_menu_preference))) {
 
-					newFragment = new SettingsFragment();
+					newFragment = new PreferenceFragment();
 					FragmentManagerHelper.replaceFragment(newFragment);
 					FragmentManagerHelper
 							.setCurrentLoggedUserFragment(newFragment);
 					FragmentManagerHelper.setFragmentType("NORMAL");
 
-				} else if (menu.getText().toString().equals("Rate App")) {
+				} else if (menu
+						.getText()
+						.toString()
+						.equals(getResources().getString(
+								R.string.logged_menu_rate))) {
 
 					final String my_package_name = "com.smartroom";
 					String url = "";
@@ -268,7 +300,11 @@ public class MemberActivity extends FragmentActivity {
 
 				}
 
-				else if (menu.getText().toString().equals("Help")) {
+				else if (menu
+						.getText()
+						.toString()
+						.equals(getResources().getString(
+								R.string.logged_menu_help))) {
 
 					newFragment = new HelpFragment();
 
@@ -279,7 +315,11 @@ public class MemberActivity extends FragmentActivity {
 
 				}
 
-				else if (menu.getText().toString().equals("About Us")) {
+				else if (menu
+						.getText()
+						.toString()
+						.equals(getResources().getString(
+								R.string.logged_menu_about))) {
 
 					newFragment = new AboutFragment();
 					FragmentManagerHelper.replaceFragment(newFragment);
@@ -287,7 +327,11 @@ public class MemberActivity extends FragmentActivity {
 							.setCurrentLoggedUserFragment(newFragment);
 					FragmentManagerHelper.setFragmentType("NORMAL");
 
-				} else if (menu.getText().toString().equals("Contact Us")) {
+				} else if (menu
+						.getText()
+						.toString()
+						.equals(getResources().getString(
+								R.string.logged_menu_contact))) {
 
 					newFragment = new ContactFragment();
 					FragmentManagerHelper.replaceFragment(newFragment);

@@ -171,6 +171,9 @@ public class PropertyAdvertStep3Fragment extends Fragment {
 					"You must specify Rent Amount on Tab 1!",
 					Toast.LENGTH_SHORT).show();
 		}
+		
+		String postcode = PropertyAdvertStep2Fragment.propertyAdvertPostcodeTxt.getText().toString();
+		
 		if (PropertyAdvertStep2Fragment.propertyAdvertPostcodeTxt.getText()
 				.length() == 0) {
 			PropertyAdvertStep2Fragment.propertyAdvertPostcodeTxt

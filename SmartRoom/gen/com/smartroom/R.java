@@ -13,13 +13,14 @@ public final class R {
         public static final int slide_out_down=0x7f040001;
     }
     public static final class array {
-        public static final int addedDate=0x7f0b0002;
-        public static final int furnishing=0x7f0b0005;
-        public static final int priceFrequency=0x7f0b0004;
-        public static final int propertyType=0x7f0b0001;
-        public static final int sellerType=0x7f0b0000;
-        public static final int sortBy=0x7f0b0003;
-        public static final int titles=0x7f0b0006;
+        public static final int addedDate=0x7f0c0002;
+        public static final int furnishing=0x7f0c0005;
+        public static final int mode=0x7f0c0007;
+        public static final int priceFrequency=0x7f0c0004;
+        public static final int propertyType=0x7f0c0001;
+        public static final int sellerType=0x7f0c0000;
+        public static final int sortBy=0x7f0c0003;
+        public static final int titles=0x7f0c0006;
     }
     public static final class attr {
         /** 
@@ -97,6 +98,163 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int cameraZoom=0x7f010008;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int centered=0x7f010017;
+        /**  Screen edge padding. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int clipPadding=0x7f010022;
+        /**  Length of the delay to fade the indicator. 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fadeDelay=0x7f01002e;
+        /**  Length of the indicator fade to transparent. 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fadeLength=0x7f01002f;
+        /**  Whether or not the selected indicator fades. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fades=0x7f01002d;
+        /**  Color of the filled circle that represents the current page. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fillColor=0x7f01001b;
+        /**  Color of the footer line and indicator. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int footerColor=0x7f010023;
+        /**  Height of the indicator above the footer line. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int footerIndicatorHeight=0x7f010026;
+        /**  Style of the indicator. Default is triangle. 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>triangle</code></td><td>1</td><td></td></tr>
+<tr><td><code>underline</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static final int footerIndicatorStyle=0x7f010025;
+        /**  Left and right padding of the underline indicator. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int footerIndicatorUnderlinePadding=0x7f010027;
+        /**  Height of the footer line. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int footerLineHeight=0x7f010024;
+        /**  Padding between the bottom of the title and the footer. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int footerPadding=0x7f010028;
+        /**  Width of the gap between each indicator line. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int gapWidth=0x7f010021;
+        /**  Position of the line. 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>bottom</code></td><td>0</td><td></td></tr>
+<tr><td><code>top</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int linePosition=0x7f010029;
+        /**  Width of each indicator line. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int lineWidth=0x7f010020;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -111,6 +269,96 @@ containing a value of this type.
 </table>
          */
         public static final int mapType=0x7f010003;
+        /**  Color of the filled circles that represents pages. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int pageColor=0x7f01001c;
+        /**  Radius of the circles. This is also the spacing between circles. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int radius=0x7f01001d;
+        /**  Whether or not the selected item is displayed as bold. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int selectedBold=0x7f01002a;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int selectedColor=0x7f010018;
+        /**  Whether or not the selected indicator snaps to the circles. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int snap=0x7f01001e;
+        /**  Color of the open circles. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int strokeColor=0x7f01001f;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int strokeWidth=0x7f010019;
+        /**  Padding between titles when bumping into each other. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int titlePadding=0x7f01002b;
+        /**  Padding between titles and the top of the View. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int topPadding=0x7f01002c;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -159,6 +407,15 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int uiZoomGestures=0x7f01000e;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int unselectedColor=0x7f01001a;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -167,6 +424,36 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int useViewLifecycle=0x7f01000f;
+        /**  Style of the circle indicator. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int vpiCirclePageIndicatorStyle=0x7f010011;
+        /**  Style of the icon indicator's views. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int vpiIconPageIndicatorStyle=0x7f010012;
+        /**  Style of the line indicator. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int vpiLinePageIndicatorStyle=0x7f010013;
+        /**  Style of the tab indicator's tabs. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int vpiTabPageIndicatorStyle=0x7f010015;
+        /**  Style of the title indicator. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int vpiTitlePageIndicatorStyle=0x7f010014;
+        /**  Style of the underline indicator. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int vpiUnderlinePageIndicatorStyle=0x7f010016;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -175,6 +462,10 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int zOrderOnTop=0x7f010010;
+    }
+    public static final class bool {
+        public static final int default_circle_indicator_centered=0x7f0b0000;
+        public static final int default_circle_indicator_snap=0x7f0b0001;
     }
     public static final class color {
         public static final int common_action_bar_splitter=0x7f060009;
@@ -189,14 +480,20 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f060006;
         public static final int common_signin_btn_light_text_focused=0x7f060007;
         public static final int common_signin_btn_light_text_pressed=0x7f060005;
-        public static final int common_signin_btn_text_dark=0x7f060010;
-        public static final int common_signin_btn_text_light=0x7f060011;
+        public static final int common_signin_btn_text_dark=0x7f060016;
+        public static final int common_signin_btn_text_light=0x7f060017;
         public static final int counter_text_bg=0x7f06000e;
         public static final int counter_text_color=0x7f06000f;
+        public static final int default_circle_indicator_fill_color=0x7f060013;
+        public static final int default_circle_indicator_page_color=0x7f060014;
+        public static final int default_circle_indicator_stroke_color=0x7f060015;
+        public static final int holo_blue_dark=0x7f060010;
         public static final int list_background=0x7f06000b;
         public static final int list_background_pressed=0x7f06000c;
         public static final int list_divider=0x7f06000d;
         public static final int list_item_title=0x7f06000a;
+        public static final int view_divider_color=0x7f060011;
+        public static final int view_divider_color_2=0x7f060012;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -208,6 +505,11 @@ containing a value of this type.
          */
         public static final int activity_horizontal_margin=0x7f0a0000;
         public static final int activity_vertical_margin=0x7f0a0001;
+        public static final int default_circle_indicator_radius=0x7f0a0005;
+        public static final int default_circle_indicator_stroke_width=0x7f0a0006;
+        public static final int padding_large=0x7f0a0004;
+        public static final int padding_medium=0x7f0a0003;
+        public static final int padding_small=0x7f0a0002;
     }
     public static final class drawable {
         public static final int action_search=0x7f020000;
@@ -258,277 +560,312 @@ containing a value of this type.
         public static final int ic_contact=0x7f02002d;
         public static final int ic_drawer=0x7f02002e;
         public static final int ic_edit_profile=0x7f02002f;
-        public static final int ic_facebook=0x7f020030;
-        public static final int ic_google_plus=0x7f020031;
-        public static final int ic_help=0x7f020032;
-        public static final int ic_home=0x7f020033;
-        public static final int ic_launcher=0x7f020034;
-        public static final int ic_linkedin=0x7f020035;
-        public static final int ic_map_marker=0x7f020036;
-        public static final int ic_message=0x7f020037;
-        public static final int ic_plusone_medium_off_client=0x7f020038;
-        public static final int ic_plusone_small_off_client=0x7f020039;
-        public static final int ic_plusone_standard_off_client=0x7f02003a;
-        public static final int ic_plusone_tall_off_client=0x7f02003b;
-        public static final int ic_preference=0x7f02003c;
-        public static final int ic_rate=0x7f02003d;
-        public static final int ic_retry=0x7f02003e;
-        public static final int ic_saved=0x7f02003f;
-        public static final int ic_saved_ad=0x7f020040;
-        public static final int ic_search=0x7f020041;
-        public static final int ic_settings=0x7f020042;
-        public static final int ic_share=0x7f020043;
-        public static final int ic_twitter=0x7f020044;
-        public static final int linkedin=0x7f020045;
-        public static final int linkedin_custom=0x7f020046;
-        public static final int list_item_bg_normal=0x7f020047;
-        public static final int list_item_bg_pressed=0x7f020048;
-        public static final int list_selector=0x7f020049;
-        public static final int no_pic=0x7f02004a;
-        public static final int nonet=0x7f02004b;
-        public static final int off=0x7f02004c;
-        public static final int on=0x7f02004d;
-        public static final int people_search_custom=0x7f02004e;
-        public static final int retry=0x7f02004f;
-        public static final int spash_background=0x7f020050;
-        public static final int twitter=0x7f020051;
-        public static final int twitter_custom=0x7f020052;
-        public static final int user_search=0x7f020053;
+        public static final int ic_empty=0x7f020030;
+        public static final int ic_error=0x7f020031;
+        public static final int ic_facebook=0x7f020032;
+        public static final int ic_google_plus=0x7f020033;
+        public static final int ic_help=0x7f020034;
+        public static final int ic_home=0x7f020035;
+        public static final int ic_launcher=0x7f020036;
+        public static final int ic_linkedin=0x7f020037;
+        public static final int ic_map_marker=0x7f020038;
+        public static final int ic_message=0x7f020039;
+        public static final int ic_plusone_medium_off_client=0x7f02003a;
+        public static final int ic_plusone_small_off_client=0x7f02003b;
+        public static final int ic_plusone_standard_off_client=0x7f02003c;
+        public static final int ic_plusone_tall_off_client=0x7f02003d;
+        public static final int ic_preference=0x7f02003e;
+        public static final int ic_rate=0x7f02003f;
+        public static final int ic_retry=0x7f020040;
+        public static final int ic_saved=0x7f020041;
+        public static final int ic_saved_ad=0x7f020042;
+        public static final int ic_search=0x7f020043;
+        public static final int ic_settings=0x7f020044;
+        public static final int ic_share=0x7f020045;
+        public static final int ic_twitter=0x7f020046;
+        public static final int linkedin=0x7f020047;
+        public static final int linkedin_custom=0x7f020048;
+        public static final int list_item_bg_normal=0x7f020049;
+        public static final int list_item_bg_pressed=0x7f02004a;
+        public static final int list_selector=0x7f02004b;
+        public static final int no_pic=0x7f02004c;
+        public static final int nonet=0x7f02004d;
+        public static final int off=0x7f02004e;
+        public static final int on=0x7f02004f;
+        public static final int people_search_custom=0x7f020050;
+        public static final int retry=0x7f020051;
+        public static final int spash_background=0x7f020052;
+        public static final int twitter=0x7f020053;
+        public static final int twitter_custom=0x7f020054;
+        public static final int user_search=0x7f020055;
     }
     public static final class id {
-        public static final int EditText01=0x7f07009d;
-        public static final int EditText02=0x7f07009f;
-        public static final int EditText03=0x7f07009e;
-        public static final int TextView01=0x7f070042;
-        public static final int TextView02=0x7f070055;
-        public static final int TextView03=0x7f070040;
-        public static final int TextView04=0x7f070046;
-        public static final int TextView05=0x7f070089;
-        public static final int advertMe=0x7f07003f;
-        public static final int advertProperty=0x7f07003e;
-        public static final int appWelcomeTitle=0x7f070014;
-        public static final int askCreateAccountButton=0x7f070066;
-        public static final int askLoginBtn=0x7f070065;
-        public static final int browsePic=0x7f070070;
-        public static final int call_advertiser=0x7f0700b5;
-        public static final int check_on_of=0x7f07009c;
-        public static final int clearLogin=0x7f07007c;
-        public static final int content_frame=0x7f070011;
-        public static final int content_frame_logged_user=0x7f070009;
-        public static final int createAccountButton=0x7f07007e;
-        public static final int currLoc=0x7f070099;
-        public static final int drawer_layout=0x7f070008;
-        public static final int editProfileButton=0x7f070071;
-        public static final int editProfileConfirmPassword=0x7f07006c;
-        public static final int editProfileFullName=0x7f070069;
-        public static final int editProfileLandlord=0x7f07006e;
-        public static final int editProfileOldPassword=0x7f07006a;
-        public static final int editProfilePassword=0x7f07006b;
-        public static final int editProfileTenant=0x7f07006d;
-        public static final int email=0x7f070092;
-        public static final int facebookLogin=0x7f07007f;
-        public static final int footer=0x7f07000d;
-        public static final int googleLogin=0x7f070080;
-        public static final int gsdhgcc=0x7f070023;
-        public static final int header=0x7f07000a;
-        public static final int homeCreateAccountButton=0x7f070079;
-        public static final int homeHouseSearch=0x7f070076;
-        public static final int homeLoginBtn=0x7f070078;
-        public static final int homePeopleSearch=0x7f070077;
-        public static final int houseSearchResultCount=0x7f070006;
+        public static final int EditText01=0x7f0700b7;
+        public static final int EditText02=0x7f0700b9;
+        public static final int EditText03=0x7f0700b8;
+        public static final int TextView01=0x7f070048;
+        public static final int TextView02=0x7f07005b;
+        public static final int TextView03=0x7f070046;
+        public static final int TextView04=0x7f07004c;
+        public static final int TextView05=0x7f07009f;
+        public static final int advertMe=0x7f070045;
+        public static final int advertProperty=0x7f070044;
+        public static final int allRadio=0x7f07007c;
+        public static final int appWelcomeTitle=0x7f07001b;
+        public static final int askAdvertScrollView=0x7f07006b;
+        public static final int askCreateAccountButton=0x7f07006d;
+        public static final int askLoginBtn=0x7f07006c;
+        public static final int bottom=0x7f070007;
+        public static final int browsePic=0x7f070078;
+        public static final int call_advertiser=0x7f0700d1;
+        public static final int check_on_of=0x7f0700b6;
+        public static final int clearLogin=0x7f070086;
+        public static final int content_frame=0x7f070015;
+        public static final int content_frame_logged_user=0x7f07000d;
+        public static final int createAccountButton=0x7f070088;
+        public static final int currRadio=0x7f07007e;
+        public static final int customRadio=0x7f07007d;
+        public static final int div_a=0x7f070099;
+        public static final int div_line1=0x7f070094;
+        public static final int div_line2=0x7f070095;
+        public static final int drawer_layout=0x7f07000c;
+        public static final int editProfileButton=0x7f070079;
+        public static final int editProfileConfirmPassword=0x7f070074;
+        public static final int editProfileFullName=0x7f070071;
+        public static final int editProfileLandlord=0x7f070076;
+        public static final int editProfileOldPassword=0x7f070072;
+        public static final int editProfilePassword=0x7f070073;
+        public static final int editProfileTenant=0x7f070075;
+        public static final int email=0x7f0700a8;
+        public static final int facebookLogin=0x7f070089;
+        public static final int footer=0x7f070011;
+        public static final int googleLogin=0x7f07008a;
+        public static final int gsdhgcc=0x7f07002a;
+        public static final int header=0x7f07000e;
+        public static final int header_layout=0x7f070090;
+        public static final int header_title_layout=0x7f070091;
+        public static final int homeCreateAccountButton=0x7f070083;
+        public static final int homeHouseSearch=0x7f070080;
+        public static final int homeLoginBtn=0x7f070082;
+        public static final int homePeopleSearch=0x7f070081;
+        public static final int homesearchLocation=0x7f07007f;
+        public static final int houseSearchResultCount=0x7f07000a;
         public static final int hybrid=0x7f070004;
-        public static final int iconMenu=0x7f0700ab;
-        public static final int image=0x7f070039;
-        public static final int imageView1=0x7f070084;
-        public static final int left_drawer=0x7f070010;
-        public static final int linearLayout1=0x7f07003d;
-        public static final int linkedinLogin=0x7f070082;
-        public static final int load_textview=0x7f070013;
-        public static final int loggedHouseSearch=0x7f07009a;
-        public static final int loggedPeopleSearch=0x7f07009b;
-        public static final int loggedUserFullName=0x7f07000c;
-        public static final int loggedUserPic=0x7f07000b;
-        public static final int loginBtn=0x7f07007d;
-        public static final int loginEmail=0x7f07007a;
-        public static final int loginPassword=0x7f07007b;
-        public static final int logoutSession=0x7f07000e;
-        public static final int map=0x7f070083;
-        public static final int menuTxt=0x7f0700ac;
+        public static final int iconMenu=0x7f0700c5;
+        public static final int image=0x7f070040;
+        public static final int imageView1=0x7f07008e;
+        public static final int imageView1ADV=0x7f07006e;
+        public static final int indicator=0x7f070017;
+        public static final int left_drawer=0x7f070014;
+        public static final int linearLayout1=0x7f070043;
+        public static final int linkedinLogin=0x7f07008c;
+        public static final int load_textview=0x7f07001a;
+        public static final int loggedHouseSearch=0x7f0700b4;
+        public static final int loggedPeopleSearch=0x7f0700b5;
+        public static final int loggedRadio0=0x7f0700b2;
+        public static final int loggedRadio1=0x7f0700b1;
+        public static final int loggedRadio2=0x7f0700b0;
+        public static final int loggedSearchValue=0x7f0700af;
+        public static final int loggedUserFullName=0x7f070010;
+        public static final int loggedUserPic=0x7f07000f;
+        public static final int loginBtn=0x7f070087;
+        public static final int loginEmail=0x7f070084;
+        public static final int loginPassword=0x7f070085;
+        public static final int logoutSession=0x7f070012;
+        public static final int map=0x7f07008d;
+        public static final int menuTxt=0x7f0700c6;
         public static final int none=0x7f070000;
         public static final int normal=0x7f070001;
-        public static final int notificationLayout=0x7f070036;
-        public static final int notificationScrollLayout=0x7f070035;
-        public static final int pager=0x7f070037;
-        public static final int preferenceAddedDate=0x7f07008d;
-        public static final int preferenceMaxBed=0x7f070088;
-        public static final int preferenceMaxPrice=0x7f070086;
-        public static final int preferenceMinBed=0x7f070087;
-        public static final int preferenceMinPrice=0x7f070085;
-        public static final int preferencePriceFrequency=0x7f07008f;
-        public static final int preferencePropertyType=0x7f07008b;
-        public static final int preferenceSave=0x7f070090;
-        public static final int preferenceSearchDistance=0x7f07008c;
-        public static final int preferenceSellerType=0x7f07008a;
-        public static final int preferenceSortBy=0x7f07008e;
-        public static final int profile=0x7f0700b4;
-        public static final int progressBar1=0x7f070012;
-        public static final int propertyAdvertAddress=0x7f07004b;
-        public static final int propertyAdvertAdvertTitle=0x7f07005e;
-        public static final int propertyAdvertAdvertiserFullName=0x7f070060;
-        public static final int propertyAdvertBalconyPatio=0x7f070059;
-        public static final int propertyAdvertBedNumber=0x7f070043;
-        public static final int propertyAdvertBillIncluded=0x7f07005c;
-        public static final int propertyAdvertBroadband=0x7f07005b;
-        public static final int propertyAdvertBrowsePic=0x7f070053;
-        public static final int propertyAdvertCountry=0x7f07004d;
-        public static final int propertyAdvertCountryTXTVIEW=0x7f07004c;
-        public static final int propertyAdvertDate=0x7f070050;
-        public static final int propertyAdvertDepositAmount=0x7f070049;
-        public static final int propertyAdvertDisabledAccess=0x7f07005a;
-        public static final int propertyAdvertDisplayName=0x7f070061;
-        public static final int propertyAdvertDisplayTelephone=0x7f070063;
-        public static final int propertyAdvertFurnishing=0x7f07004e;
-        public static final int propertyAdvertGarage=0x7f070058;
-        public static final int propertyAdvertGardenRoofTerrace=0x7f070057;
-        public static final int propertyAdvertParking=0x7f070056;
-        public static final int propertyAdvertPic=0x7f070054;
-        public static final int propertyAdvertPostAdvert=0x7f070064;
-        public static final int propertyAdvertPostCode=0x7f07004a;
-        public static final int propertyAdvertPriceFrequency=0x7f070048;
-        public static final int propertyAdvertPropertyDescription=0x7f07005f;
-        public static final int propertyAdvertPropertyTextView=0x7f070044;
-        public static final int propertyAdvertPropertyType=0x7f070045;
-        public static final int propertyAdvertReferenceRequired=0x7f070051;
-        public static final int propertyAdvertRentAmount=0x7f070047;
-        public static final int propertyAdvertSellerType=0x7f070041;
-        public static final int propertyAdvertTakePic=0x7f070052;
-        public static final int propertyAdvertTelephone=0x7f070062;
-        public static final int propertyAdvertiserTitle=0x7f07005d;
-        public static final int radio0=0x7f070073;
-        public static final int radio1=0x7f070074;
-        public static final int radioGroup1=0x7f070072;
-        public static final int registerAsLandlord=0x7f070097;
-        public static final int registerAsTenant=0x7f070096;
-        public static final int registerButton=0x7f070098;
-        public static final int registerConfirmPassword=0x7f070095;
-        public static final int registerEmail=0x7f070093;
-        public static final int registerFullName=0x7f070091;
-        public static final int registerPassword=0x7f070094;
-        public static final int relativeLayout1=0x7f07001f;
+        public static final int notificationLayout=0x7f07003d;
+        public static final int notificationScrollLayout=0x7f07003c;
+        public static final int pager=0x7f07003e;
+        public static final int pdt_detail_root_layout=0x7f07008f;
+        public static final int pdt_name=0x7f07009a;
+        public static final int pdt_name_layout=0x7f070097;
+        public static final int pdt_name_title=0x7f070098;
+        public static final int preferenceAddedDate=0x7f0700a3;
+        public static final int preferenceMaxBed=0x7f07009e;
+        public static final int preferenceMaxPrice=0x7f07009c;
+        public static final int preferenceMinBed=0x7f07009d;
+        public static final int preferenceMinPrice=0x7f07009b;
+        public static final int preferencePriceFrequency=0x7f0700a5;
+        public static final int preferencePropertyType=0x7f0700a1;
+        public static final int preferenceSave=0x7f0700a6;
+        public static final int preferenceSearchDistance=0x7f0700a2;
+        public static final int preferenceSellerType=0x7f0700a0;
+        public static final int preferenceSortBy=0x7f0700a4;
+        public static final int product_detail_img=0x7f070092;
+        public static final int product_id_text=0x7f070093;
+        public static final int profile=0x7f0700d0;
+        public static final int progressBar1=0x7f070019;
+        public static final int propertyAdvertAddress=0x7f070051;
+        public static final int propertyAdvertAdvertTitle=0x7f070064;
+        public static final int propertyAdvertAdvertiserFullName=0x7f070066;
+        public static final int propertyAdvertBalconyPatio=0x7f07005f;
+        public static final int propertyAdvertBedNumber=0x7f070049;
+        public static final int propertyAdvertBillIncluded=0x7f070062;
+        public static final int propertyAdvertBroadband=0x7f070061;
+        public static final int propertyAdvertBrowsePic=0x7f070059;
+        public static final int propertyAdvertCountry=0x7f070053;
+        public static final int propertyAdvertCountryTXTVIEW=0x7f070052;
+        public static final int propertyAdvertDate=0x7f070056;
+        public static final int propertyAdvertDepositAmount=0x7f07004f;
+        public static final int propertyAdvertDisabledAccess=0x7f070060;
+        public static final int propertyAdvertDisplayName=0x7f070067;
+        public static final int propertyAdvertDisplayTelephone=0x7f070069;
+        public static final int propertyAdvertFurnishing=0x7f070054;
+        public static final int propertyAdvertGarage=0x7f07005e;
+        public static final int propertyAdvertGardenRoofTerrace=0x7f07005d;
+        public static final int propertyAdvertParking=0x7f07005c;
+        public static final int propertyAdvertPic=0x7f07005a;
+        public static final int propertyAdvertPostAdvert=0x7f07006a;
+        public static final int propertyAdvertPostCode=0x7f070050;
+        public static final int propertyAdvertPriceFrequency=0x7f07004e;
+        public static final int propertyAdvertPropertyDescription=0x7f070065;
+        public static final int propertyAdvertPropertyTextView=0x7f07004a;
+        public static final int propertyAdvertPropertyType=0x7f07004b;
+        public static final int propertyAdvertReferenceRequired=0x7f070057;
+        public static final int propertyAdvertRentAmount=0x7f07004d;
+        public static final int propertyAdvertSellerType=0x7f070047;
+        public static final int propertyAdvertTakePic=0x7f070058;
+        public static final int propertyAdvertTelephone=0x7f070068;
+        public static final int propertyAdvertiserTitle=0x7f070063;
+        public static final int radioGroup1=0x7f07007b;
+        public static final int registerAsLandlord=0x7f0700ad;
+        public static final int registerAsTenant=0x7f0700ac;
+        public static final int registerButton=0x7f0700ae;
+        public static final int registerConfirmPassword=0x7f0700ab;
+        public static final int registerEmail=0x7f0700a9;
+        public static final int registerFullName=0x7f0700a7;
+        public static final int registerPassword=0x7f0700aa;
+        public static final int relativeLayout1=0x7f070026;
+        public static final int rlayout_detail=0x7f070096;
         public static final int satellite=0x7f070002;
-        public static final int savePreference=0x7f0700a1;
-        public static final int save_ad=0x7f0700b7;
-        public static final int scrollView1=0x7f07003b;
-        public static final int scrollableContents=0x7f07000f;
-        public static final int searchHouseAddress=0x7f0700a7;
-        public static final int searchHousePhoto=0x7f0700a6;
-        public static final int searchHousePrice=0x7f0700a8;
-        public static final int searchHousePropertyType=0x7f0700a5;
-        public static final int searchHouseReferenceNumber=0x7f0700a9;
-        public static final int searchHouseTitle=0x7f0700aa;
-        public static final int searchLocation=0x7f070075;
-        public static final int searchResultListView=0x7f070007;
-        public static final int search_result_refresh=0x7f070005;
-        public static final int sendCustomMessageBtn=0x7f0700b3;
-        public static final int sendCustomMessageTxt=0x7f0700b2;
-        public static final int send_message=0x7f0700b6;
-        public static final int setAvailabilityDate=0x7f07004f;
-        public static final int share_advert=0x7f0700b8;
-        public static final int spinner1=0x7f0700a0;
-        public static final int takePic=0x7f07006f;
+        public static final int savePreference=0x7f0700bb;
+        public static final int save_ad=0x7f0700d3;
+        public static final int scrollView1=0x7f070041;
+        public static final int scrollableContents=0x7f070013;
+        public static final int searchHouseAddress=0x7f0700c1;
+        public static final int searchHousePhoto=0x7f0700c0;
+        public static final int searchHousePrice=0x7f0700c2;
+        public static final int searchHousePropertyType=0x7f0700bf;
+        public static final int searchHouseReferenceNumber=0x7f0700c3;
+        public static final int searchHouseTitle=0x7f0700c4;
+        public static final int searchLocation=0x7f0700b3;
+        public static final int searchResultListView=0x7f07000b;
+        public static final int search_mode=0x7f0700cd;
+        public static final int search_result_refresh=0x7f070009;
+        public static final int sendCustomMessageBtn=0x7f0700cf;
+        public static final int sendCustomMessageTxt=0x7f0700ce;
+        public static final int send_message=0x7f0700d2;
+        public static final int setAvailabilityDate=0x7f070055;
+        public static final int share_advert=0x7f0700d4;
+        public static final int spinner1=0x7f0700ba;
+        public static final int takePic=0x7f070077;
         public static final int terrain=0x7f070003;
-        public static final int text=0x7f07003a;
-        public static final int textView1=0x7f070015;
-        public static final int textView133=0x7f0700a4;
-        public static final int textView2=0x7f070018;
-        public static final int textView3=0x7f07003c;
-        public static final int textView4=0x7f070067;
-        public static final int textView5=0x7f070068;
-        public static final int toast_layout_root=0x7f070038;
-        public static final int tstfa=0x7f07001d;
-        public static final int twitterLogin=0x7f070081;
-        public static final int viewAdverscrollView=0x7f070016;
-        public static final int viewAdvertAddress=0x7f070029;
-        public static final int viewAdvertAvailabilityDate=0x7f07002c;
-        public static final int viewAdvertBalconyAvailable=0x7f070031;
-        public static final int viewAdvertBedNum=0x7f070021;
-        public static final int viewAdvertBillIncluded=0x7f070034;
-        public static final int viewAdvertBroadband=0x7f070033;
-        public static final int viewAdvertCountry=0x7f07002a;
-        public static final int viewAdvertDepositAmount=0x7f070027;
-        public static final int viewAdvertDescription=0x7f07001e;
-        public static final int viewAdvertDisabledAccess=0x7f070032;
-        public static final int viewAdvertFullName=0x7f070019;
-        public static final int viewAdvertFurnishing=0x7f07002b;
-        public static final int viewAdvertGarageAvailable=0x7f070030;
-        public static final int viewAdvertGardenAvailable=0x7f07002f;
-        public static final int viewAdvertMap=0x7f070020;
-        public static final int viewAdvertParkingAvailable=0x7f07002e;
-        public static final int viewAdvertPic=0x7f070017;
-        public static final int viewAdvertPostcode=0x7f070028;
-        public static final int viewAdvertPriceFrequency=0x7f070026;
-        public static final int viewAdvertPropertyType=0x7f070024;
-        public static final int viewAdvertReferenceNumber=0x7f07001b;
-        public static final int viewAdvertReferenceRequired=0x7f07002d;
-        public static final int viewAdvertRentAmount=0x7f070025;
-        public static final int viewAdvertSellerType=0x7f070022;
-        public static final int viewAdvertTelephone=0x7f07001a;
-        public static final int viewAdvertTitle=0x7f07001c;
-        public static final int viewMessageAdvertReference=0x7f0700af;
-        public static final int viewMessageDate=0x7f0700b1;
-        public static final int viewMessageIcon=0x7f0700ad;
-        public static final int viewMessageMessageBody=0x7f0700b0;
-        public static final int viewMessageResultCount=0x7f0700a2;
-        public static final int viewMessageResultListView=0x7f0700a3;
-        public static final int viewMessageSender=0x7f0700ae;
+        public static final int text=0x7f070018;
+        public static final int textView1=0x7f07001c;
+        public static final int textView133=0x7f0700be;
+        public static final int textView2=0x7f07001f;
+        public static final int textView3=0x7f070042;
+        public static final int textView4=0x7f07006f;
+        public static final int textView5=0x7f070070;
+        public static final int toast_layout_root=0x7f07003f;
+        public static final int top=0x7f070008;
+        public static final int triangle=0x7f070005;
+        public static final int tstfa=0x7f070024;
+        public static final int twitterLogin=0x7f07008b;
+        public static final int underline=0x7f070006;
+        public static final int viewAdverscrollView=0x7f07001d;
+        public static final int viewAdvertAddress=0x7f070030;
+        public static final int viewAdvertAvailabilityDate=0x7f070033;
+        public static final int viewAdvertBalconyAvailable=0x7f070038;
+        public static final int viewAdvertBedNum=0x7f070028;
+        public static final int viewAdvertBillIncluded=0x7f07003b;
+        public static final int viewAdvertBroadband=0x7f07003a;
+        public static final int viewAdvertCountry=0x7f070031;
+        public static final int viewAdvertDepositAmount=0x7f07002e;
+        public static final int viewAdvertDescription=0x7f070025;
+        public static final int viewAdvertDisabledAccess=0x7f070039;
+        public static final int viewAdvertFullName=0x7f070020;
+        public static final int viewAdvertFurnishing=0x7f070032;
+        public static final int viewAdvertGarageAvailable=0x7f070037;
+        public static final int viewAdvertGardenAvailable=0x7f070036;
+        public static final int viewAdvertMap=0x7f070027;
+        public static final int viewAdvertParkingAvailable=0x7f070035;
+        public static final int viewAdvertPic=0x7f07001e;
+        public static final int viewAdvertPostcode=0x7f07002f;
+        public static final int viewAdvertPriceFrequency=0x7f07002d;
+        public static final int viewAdvertPropertyType=0x7f07002b;
+        public static final int viewAdvertReferenceNumber=0x7f070022;
+        public static final int viewAdvertReferenceRequired=0x7f070034;
+        public static final int viewAdvertRentAmount=0x7f07002c;
+        public static final int viewAdvertSellerType=0x7f070029;
+        public static final int viewAdvertTelephone=0x7f070021;
+        public static final int viewAdvertTitle=0x7f070023;
+        public static final int viewMessageAdvertReference=0x7f0700c9;
+        public static final int viewMessageDate=0x7f0700cb;
+        public static final int viewMessageIcon=0x7f0700c7;
+        public static final int viewMessageMessageBody=0x7f0700ca;
+        public static final int viewMessageResultCount=0x7f0700bc;
+        public static final int viewMessageResultListView=0x7f0700bd;
+        public static final int viewMessageSender=0x7f0700c8;
+        public static final int viewSpin=0x7f0700cc;
+        public static final int view_pager=0x7f070016;
+        public static final int welcomeAppNames=0x7f07007a;
     }
     public static final class integer {
+        public static final int default_circle_indicator_orientation=0x7f090001;
         public static final int google_play_services_version=0x7f090000;
     }
     public static final class layout {
         public static final int activity_house_search_result=0x7f030000;
         public static final int activity_logged_user=0x7f030001;
         public static final int activity_main=0x7f030002;
-        public static final int activity_splash=0x7f030003;
-        public static final int activity_view_advert=0x7f030004;
-        public static final int activity_view_notification=0x7f030005;
-        public static final int advert_room_activity=0x7f030006;
-        public static final int custom_notification=0x7f030007;
-        public static final int fragment_about=0x7f030008;
-        public static final int fragment_advert=0x7f030009;
-        public static final int fragment_advert_property_step1=0x7f03000a;
-        public static final int fragment_advert_property_step2=0x7f03000b;
-        public static final int fragment_advert_property_step3=0x7f03000c;
-        public static final int fragment_ask_to_login=0x7f03000d;
-        public static final int fragment_contact=0x7f03000e;
-        public static final int fragment_edit_profile=0x7f03000f;
-        public static final int fragment_help=0x7f030010;
-        public static final int fragment_home=0x7f030011;
-        public static final int fragment_login=0x7f030012;
-        public static final int fragment_map=0x7f030013;
-        public static final int fragment_no_network=0x7f030014;
-        public static final int fragment_preference=0x7f030015;
-        public static final int fragment_register=0x7f030016;
-        public static final int fragment_search=0x7f030017;
-        public static final int fragment_settings=0x7f030018;
-        public static final int fragment_view_messages=0x7f030019;
-        public static final int house_search_list_item=0x7f03001a;
-        public static final int menu_list_item=0x7f03001b;
-        public static final int message_list_itesm=0x7f03001c;
-        public static final int send_message_custom=0x7f03001d;
+        public static final int activity_slide_image=0x7f030003;
+        public static final int activity_splash=0x7f030004;
+        public static final int activity_view_advert=0x7f030005;
+        public static final int activity_view_notification=0x7f030006;
+        public static final int advert_room_activity=0x7f030007;
+        public static final int custom_notification=0x7f030008;
+        public static final int fragment_about=0x7f030009;
+        public static final int fragment_advert=0x7f03000a;
+        public static final int fragment_advert_property_step1=0x7f03000b;
+        public static final int fragment_advert_property_step2=0x7f03000c;
+        public static final int fragment_advert_property_step3=0x7f03000d;
+        public static final int fragment_ask_to_login=0x7f03000e;
+        public static final int fragment_contact=0x7f03000f;
+        public static final int fragment_edit_profile=0x7f030010;
+        public static final int fragment_help=0x7f030011;
+        public static final int fragment_home=0x7f030012;
+        public static final int fragment_login=0x7f030013;
+        public static final int fragment_map=0x7f030014;
+        public static final int fragment_no_network=0x7f030015;
+        public static final int fragment_pdt_detail=0x7f030016;
+        public static final int fragment_preference=0x7f030017;
+        public static final int fragment_register=0x7f030018;
+        public static final int fragment_search=0x7f030019;
+        public static final int fragment_settings=0x7f03001a;
+        public static final int fragment_view_messages=0x7f03001b;
+        public static final int house_search_list_item=0x7f03001c;
+        public static final int menu_list_item=0x7f03001d;
+        public static final int message_list_itesm=0x7f03001e;
+        public static final int route_option=0x7f03001f;
+        public static final int send_message_custom=0x7f030020;
     }
     public static final class menu {
-        public static final int menu=0x7f0d0000;
-        public static final int view_activity_menu=0x7f0d0001;
+        public static final int menu=0x7f0e0000;
+        public static final int view_activity_menu=0x7f0e0001;
     }
     public static final class raw {
         public static final int notification_sound=0x7f050000;
     }
     public static final class string {
-        public static final int aboutUs=0x7f080031;
+        public static final int aboutUs=0x7f080032;
         public static final int action_websearch=0x7f080025;
         public static final int advert_me=0x7f08001f;
-        public static final int appDescription=0x7f08002c;
+        public static final int allLocation=0x7f080029;
+        public static final int appDescription=0x7f08002d;
         public static final int app_id=0x7f08001d;
         public static final int app_name=0x7f08001b;
         public static final int app_not_available=0x7f080026;
@@ -556,6 +893,7 @@ containing a value of this type.
          */
         public static final int auth_client_using_bad_version_title=0x7f080014;
         public static final int auth_user=0x7f080021;
+        public static final int bodyText=0x7f080050;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -627,26 +965,65 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f080013;
-        public static final int contact=0x7f080033;
-        public static final int copyright=0x7f08002d;
+        public static final int contact=0x7f080034;
+        public static final int copyright=0x7f08002e;
         public static final int currLocation=0x7f080027;
         public static final int customLocation=0x7f080028;
         public static final int desc_list_item_icon=0x7f080024;
         public static final int drawer_close=0x7f080023;
         public static final int drawer_open=0x7f080022;
-        public static final int hSearch=0x7f08002a;
+        public static final int error_occured=0x7f08004f;
+        public static final int hSearch=0x7f08002b;
         public static final int load=0x7f08001c;
         /**  Location client code resources (prefix with location_client) 
          */
         public static final int location_client_powered_by_google=0x7f08001a;
+        public static final int logged_menu_about=0x7f080046;
+        public static final int logged_menu_advert=0x7f08003f;
+        public static final int logged_menu_contact=0x7f080047;
+        public static final int logged_menu_edit=0x7f080042;
+        public static final int logged_menu_help=0x7f080045;
+        public static final int logged_menu_logout=0x7f080048;
+        /**  Logged User Menu 
+ Logged User Menu 
+     Logged User Menu 
+         */
+        public static final int logged_menu_message=0x7f08003d;
+        public static final int logged_menu_myAdverts=0x7f080040;
+        public static final int logged_menu_peopleAdvert=0x7f08004a;
+        public static final int logged_menu_preference=0x7f080043;
+        /**  Other Logged User Properties 
+ Other Logged User Properties 
+ Other Logged User Properties 
+         */
+        public static final int logged_menu_propertyAdvert=0x7f080049;
+        public static final int logged_menu_rate=0x7f080044;
+        public static final int logged_menu_savedAds=0x7f080041;
+        public static final int logged_menu_search=0x7f08003e;
         public static final int logged_user=0x7f080020;
-        public static final int login=0x7f08002e;
-        public static final int pSearch=0x7f08002b;
+        public static final int login=0x7f08002f;
+        public static final int menu_about=0x7f08003b;
+        public static final int menu_advert=0x7f080036;
+        public static final int menu_contact=0x7f08003c;
+        public static final int menu_help=0x7f08003a;
+        /**  Non Logged User Menu 
+ Non Logged User Menu 
+     Non Logged User Menu 
+         */
+        public static final int menu_home=0x7f080035;
+        public static final int menu_preference=0x7f080037;
+        public static final int menu_rate=0x7f080039;
+        public static final int menu_share=0x7f080038;
+        public static final int no_internet_connection=0x7f08004d;
+        public static final int pSearch=0x7f08002c;
+        public static final int product_name=0x7f08004b;
         public static final int property_advert=0x7f08001e;
-        public static final int register=0x7f08002f;
-        public static final int searchHint=0x7f080030;
-        public static final int welcome=0x7f080029;
-        public static final int whyUs=0x7f080032;
+        public static final int register=0x7f080030;
+        public static final int searchHint=0x7f080031;
+        public static final int time_out=0x7f08004e;
+        public static final int txt_image_slider=0x7f08004c;
+        public static final int welcome=0x7f08002a;
+        public static final int whyUs=0x7f080033;
     }
     public static final class style {
         /** 
@@ -670,11 +1047,11 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f0c0000;
+        public static final int AppBaseTheme=0x7f0d0000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f0c0001;
+        public static final int AppTheme=0x7f0d0001;
     }
     public static final class styleable {
         /** Attributes that can be used with a AdsAttrs.
@@ -752,6 +1129,313 @@ containing a value of this type.
           @attr name com.smartroom:adUnitId
         */
         public static final int AdsAttrs_adUnitId = 2;
+        /** Attributes that can be used with a CirclePageIndicator.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CirclePageIndicator_android_background android:background}</code></td><td> View background </td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_android_orientation android:orientation}</code></td><td> Orientation of the indicator.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_centered com.smartroom:centered}</code></td><td> Whether or not the indicators should be centered.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_fillColor com.smartroom:fillColor}</code></td><td> Color of the filled circle that represents the current page.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_pageColor com.smartroom:pageColor}</code></td><td> Color of the filled circles that represents pages.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_radius com.smartroom:radius}</code></td><td> Radius of the circles.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_snap com.smartroom:snap}</code></td><td> Whether or not the selected indicator snaps to the circles.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_strokeColor com.smartroom:strokeColor}</code></td><td> Color of the open circles.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_strokeWidth com.smartroom:strokeWidth}</code></td><td> Width of the stroke used to draw the circles.</td></tr>
+           </table>
+           @see #CirclePageIndicator_android_background
+           @see #CirclePageIndicator_android_orientation
+           @see #CirclePageIndicator_centered
+           @see #CirclePageIndicator_fillColor
+           @see #CirclePageIndicator_pageColor
+           @see #CirclePageIndicator_radius
+           @see #CirclePageIndicator_snap
+           @see #CirclePageIndicator_strokeColor
+           @see #CirclePageIndicator_strokeWidth
+         */
+        public static final int[] CirclePageIndicator = {
+            0x010100c4, 0x010100d4, 0x7f010017, 0x7f010019,
+            0x7f01001b, 0x7f01001c, 0x7f01001d, 0x7f01001e,
+            0x7f01001f
+        };
+        /**
+          <p>
+          @attr description
+           View background 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#background}.
+          @attr name android:background
+        */
+        public static final int CirclePageIndicator_android_background = 1;
+        /**
+          <p>
+          @attr description
+           Orientation of the indicator. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#orientation}.
+          @attr name android:orientation
+        */
+        public static final int CirclePageIndicator_android_orientation = 0;
+        /**
+          <p>
+          @attr description
+           Whether or not the indicators should be centered. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:centered
+        */
+        public static final int CirclePageIndicator_centered = 2;
+        /**
+          <p>
+          @attr description
+           Color of the filled circle that represents the current page. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:fillColor
+        */
+        public static final int CirclePageIndicator_fillColor = 4;
+        /**
+          <p>
+          @attr description
+           Color of the filled circles that represents pages. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:pageColor
+        */
+        public static final int CirclePageIndicator_pageColor = 5;
+        /**
+          <p>
+          @attr description
+           Radius of the circles. This is also the spacing between circles. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:radius
+        */
+        public static final int CirclePageIndicator_radius = 6;
+        /**
+          <p>
+          @attr description
+           Whether or not the selected indicator snaps to the circles. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:snap
+        */
+        public static final int CirclePageIndicator_snap = 7;
+        /**
+          <p>
+          @attr description
+           Color of the open circles. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:strokeColor
+        */
+        public static final int CirclePageIndicator_strokeColor = 8;
+        /**
+          <p>
+          @attr description
+           Width of the stroke used to draw the circles. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:strokeWidth
+        */
+        public static final int CirclePageIndicator_strokeWidth = 3;
+        /** Attributes that can be used with a LinePageIndicator.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #LinePageIndicator_android_background android:background}</code></td><td> View background </td></tr>
+           <tr><td><code>{@link #LinePageIndicator_centered com.smartroom:centered}</code></td><td> Whether or not the indicators should be centered.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_gapWidth com.smartroom:gapWidth}</code></td><td> Width of the gap between each indicator line.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_lineWidth com.smartroom:lineWidth}</code></td><td> Width of each indicator line.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_selectedColor com.smartroom:selectedColor}</code></td><td> Color of the selected line that represents the current page.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_strokeWidth com.smartroom:strokeWidth}</code></td><td> Width of each indicator line's stroke.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_unselectedColor com.smartroom:unselectedColor}</code></td><td> Color of the unselected lines that represent the pages.</td></tr>
+           </table>
+           @see #LinePageIndicator_android_background
+           @see #LinePageIndicator_centered
+           @see #LinePageIndicator_gapWidth
+           @see #LinePageIndicator_lineWidth
+           @see #LinePageIndicator_selectedColor
+           @see #LinePageIndicator_strokeWidth
+           @see #LinePageIndicator_unselectedColor
+         */
+        public static final int[] LinePageIndicator = {
+            0x010100d4, 0x7f010017, 0x7f010018, 0x7f010019,
+            0x7f01001a, 0x7f010020, 0x7f010021
+        };
+        /**
+          <p>
+          @attr description
+           View background 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#background}.
+          @attr name android:background
+        */
+        public static final int LinePageIndicator_android_background = 0;
+        /**
+          <p>
+          @attr description
+           Whether or not the indicators should be centered. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:centered
+        */
+        public static final int LinePageIndicator_centered = 1;
+        /**
+          <p>
+          @attr description
+           Width of the gap between each indicator line. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:gapWidth
+        */
+        public static final int LinePageIndicator_gapWidth = 6;
+        /**
+          <p>
+          @attr description
+           Width of each indicator line. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:lineWidth
+        */
+        public static final int LinePageIndicator_lineWidth = 5;
+        /**
+          <p>
+          @attr description
+           Color of the selected line that represents the current page. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:selectedColor
+        */
+        public static final int LinePageIndicator_selectedColor = 2;
+        /**
+          <p>
+          @attr description
+           Width of each indicator line's stroke. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:strokeWidth
+        */
+        public static final int LinePageIndicator_strokeWidth = 3;
+        /**
+          <p>
+          @attr description
+           Color of the unselected lines that represent the pages. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:unselectedColor
+        */
+        public static final int LinePageIndicator_unselectedColor = 4;
         /** Attributes that can be used with a MapAttrs.
            <p>Includes the following attributes:</p>
            <table>
@@ -996,5 +1680,483 @@ containing a value of this type.
           @attr name com.smartroom:zOrderOnTop
         */
         public static final int MapAttrs_zOrderOnTop = 13;
+        /** Attributes that can be used with a TitlePageIndicator.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TitlePageIndicator_android_background android:background}</code></td><td> View background </td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_android_textColor android:textColor}</code></td><td> Color of regular titles.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_android_textSize android:textSize}</code></td><td> Size of title text.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_clipPadding com.smartroom:clipPadding}</code></td><td> Screen edge padding.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerColor com.smartroom:footerColor}</code></td><td> Color of the footer line and indicator.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerIndicatorHeight com.smartroom:footerIndicatorHeight}</code></td><td> Height of the indicator above the footer line.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerIndicatorStyle com.smartroom:footerIndicatorStyle}</code></td><td> Style of the indicator.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerIndicatorUnderlinePadding com.smartroom:footerIndicatorUnderlinePadding}</code></td><td> Left and right padding of the underline indicator.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerLineHeight com.smartroom:footerLineHeight}</code></td><td> Height of the footer line.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerPadding com.smartroom:footerPadding}</code></td><td> Padding between the bottom of the title and the footer.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_linePosition com.smartroom:linePosition}</code></td><td> Position of the line.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_selectedBold com.smartroom:selectedBold}</code></td><td> Whether or not the selected item is displayed as bold.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_selectedColor com.smartroom:selectedColor}</code></td><td> Color of the selected title.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_titlePadding com.smartroom:titlePadding}</code></td><td> Padding between titles when bumping into each other.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_topPadding com.smartroom:topPadding}</code></td><td> Padding between titles and the top of the View.</td></tr>
+           </table>
+           @see #TitlePageIndicator_android_background
+           @see #TitlePageIndicator_android_textColor
+           @see #TitlePageIndicator_android_textSize
+           @see #TitlePageIndicator_clipPadding
+           @see #TitlePageIndicator_footerColor
+           @see #TitlePageIndicator_footerIndicatorHeight
+           @see #TitlePageIndicator_footerIndicatorStyle
+           @see #TitlePageIndicator_footerIndicatorUnderlinePadding
+           @see #TitlePageIndicator_footerLineHeight
+           @see #TitlePageIndicator_footerPadding
+           @see #TitlePageIndicator_linePosition
+           @see #TitlePageIndicator_selectedBold
+           @see #TitlePageIndicator_selectedColor
+           @see #TitlePageIndicator_titlePadding
+           @see #TitlePageIndicator_topPadding
+         */
+        public static final int[] TitlePageIndicator = {
+            0x01010095, 0x01010098, 0x010100d4, 0x7f010018,
+            0x7f010022, 0x7f010023, 0x7f010024, 0x7f010025,
+            0x7f010026, 0x7f010027, 0x7f010028, 0x7f010029,
+            0x7f01002a, 0x7f01002b, 0x7f01002c
+        };
+        /**
+          <p>
+          @attr description
+           View background 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#background}.
+          @attr name android:background
+        */
+        public static final int TitlePageIndicator_android_background = 2;
+        /**
+          <p>
+          @attr description
+           Color of regular titles. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#textColor}.
+          @attr name android:textColor
+        */
+        public static final int TitlePageIndicator_android_textColor = 1;
+        /**
+          <p>
+          @attr description
+           Size of title text. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#textSize}.
+          @attr name android:textSize
+        */
+        public static final int TitlePageIndicator_android_textSize = 0;
+        /**
+          <p>
+          @attr description
+           Screen edge padding. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:clipPadding
+        */
+        public static final int TitlePageIndicator_clipPadding = 4;
+        /**
+          <p>
+          @attr description
+           Color of the footer line and indicator. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:footerColor
+        */
+        public static final int TitlePageIndicator_footerColor = 5;
+        /**
+          <p>
+          @attr description
+           Height of the indicator above the footer line. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:footerIndicatorHeight
+        */
+        public static final int TitlePageIndicator_footerIndicatorHeight = 8;
+        /**
+          <p>
+          @attr description
+           Style of the indicator. Default is triangle. 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>triangle</code></td><td>1</td><td></td></tr>
+<tr><td><code>underline</code></td><td>2</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.smartroom:footerIndicatorStyle
+        */
+        public static final int TitlePageIndicator_footerIndicatorStyle = 7;
+        /**
+          <p>
+          @attr description
+           Left and right padding of the underline indicator. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:footerIndicatorUnderlinePadding
+        */
+        public static final int TitlePageIndicator_footerIndicatorUnderlinePadding = 9;
+        /**
+          <p>
+          @attr description
+           Height of the footer line. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:footerLineHeight
+        */
+        public static final int TitlePageIndicator_footerLineHeight = 6;
+        /**
+          <p>
+          @attr description
+           Padding between the bottom of the title and the footer. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:footerPadding
+        */
+        public static final int TitlePageIndicator_footerPadding = 10;
+        /**
+          <p>
+          @attr description
+           Position of the line. 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>bottom</code></td><td>0</td><td></td></tr>
+<tr><td><code>top</code></td><td>1</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.smartroom:linePosition
+        */
+        public static final int TitlePageIndicator_linePosition = 11;
+        /**
+          <p>
+          @attr description
+           Whether or not the selected item is displayed as bold. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:selectedBold
+        */
+        public static final int TitlePageIndicator_selectedBold = 12;
+        /**
+          <p>
+          @attr description
+           Color of the selected title. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:selectedColor
+        */
+        public static final int TitlePageIndicator_selectedColor = 3;
+        /**
+          <p>
+          @attr description
+           Padding between titles when bumping into each other. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:titlePadding
+        */
+        public static final int TitlePageIndicator_titlePadding = 13;
+        /**
+          <p>
+          @attr description
+           Padding between titles and the top of the View. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:topPadding
+        */
+        public static final int TitlePageIndicator_topPadding = 14;
+        /** Attributes that can be used with a UnderlinePageIndicator.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_android_background android:background}</code></td><td> View background </td></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_fadeDelay com.smartroom:fadeDelay}</code></td><td> Length of the delay to fade the indicator.</td></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_fadeLength com.smartroom:fadeLength}</code></td><td> Length of the indicator fade to transparent.</td></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_fades com.smartroom:fades}</code></td><td> Whether or not the selected indicator fades.</td></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_selectedColor com.smartroom:selectedColor}</code></td><td> Color of the selected line that represents the current page.</td></tr>
+           </table>
+           @see #UnderlinePageIndicator_android_background
+           @see #UnderlinePageIndicator_fadeDelay
+           @see #UnderlinePageIndicator_fadeLength
+           @see #UnderlinePageIndicator_fades
+           @see #UnderlinePageIndicator_selectedColor
+         */
+        public static final int[] UnderlinePageIndicator = {
+            0x010100d4, 0x7f010018, 0x7f01002d, 0x7f01002e,
+            0x7f01002f
+        };
+        /**
+          <p>
+          @attr description
+           View background 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#background}.
+          @attr name android:background
+        */
+        public static final int UnderlinePageIndicator_android_background = 0;
+        /**
+          <p>
+          @attr description
+           Length of the delay to fade the indicator. 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:fadeDelay
+        */
+        public static final int UnderlinePageIndicator_fadeDelay = 3;
+        /**
+          <p>
+          @attr description
+           Length of the indicator fade to transparent. 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:fadeLength
+        */
+        public static final int UnderlinePageIndicator_fadeLength = 4;
+        /**
+          <p>
+          @attr description
+           Whether or not the selected indicator fades. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:fades
+        */
+        public static final int UnderlinePageIndicator_fades = 2;
+        /**
+          <p>
+          @attr description
+           Color of the selected line that represents the current page. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.smartroom:selectedColor
+        */
+        public static final int UnderlinePageIndicator_selectedColor = 1;
+        /** Attributes that can be used with a ViewPagerIndicator.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiCirclePageIndicatorStyle com.smartroom:vpiCirclePageIndicatorStyle}</code></td><td> Style of the circle indicator.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiIconPageIndicatorStyle com.smartroom:vpiIconPageIndicatorStyle}</code></td><td> Style of the icon indicator's views.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiLinePageIndicatorStyle com.smartroom:vpiLinePageIndicatorStyle}</code></td><td> Style of the line indicator.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiTabPageIndicatorStyle com.smartroom:vpiTabPageIndicatorStyle}</code></td><td> Style of the tab indicator's tabs.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiTitlePageIndicatorStyle com.smartroom:vpiTitlePageIndicatorStyle}</code></td><td> Style of the title indicator.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiUnderlinePageIndicatorStyle com.smartroom:vpiUnderlinePageIndicatorStyle}</code></td><td> Style of the underline indicator.</td></tr>
+           </table>
+           @see #ViewPagerIndicator_vpiCirclePageIndicatorStyle
+           @see #ViewPagerIndicator_vpiIconPageIndicatorStyle
+           @see #ViewPagerIndicator_vpiLinePageIndicatorStyle
+           @see #ViewPagerIndicator_vpiTabPageIndicatorStyle
+           @see #ViewPagerIndicator_vpiTitlePageIndicatorStyle
+           @see #ViewPagerIndicator_vpiUnderlinePageIndicatorStyle
+         */
+        public static final int[] ViewPagerIndicator = {
+            0x7f010011, 0x7f010012, 0x7f010013, 0x7f010014,
+            0x7f010015, 0x7f010016
+        };
+        /**
+          <p>
+          @attr description
+           Style of the circle indicator. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.smartroom:vpiCirclePageIndicatorStyle
+        */
+        public static final int ViewPagerIndicator_vpiCirclePageIndicatorStyle = 0;
+        /**
+          <p>
+          @attr description
+           Style of the icon indicator's views. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.smartroom:vpiIconPageIndicatorStyle
+        */
+        public static final int ViewPagerIndicator_vpiIconPageIndicatorStyle = 1;
+        /**
+          <p>
+          @attr description
+           Style of the line indicator. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.smartroom:vpiLinePageIndicatorStyle
+        */
+        public static final int ViewPagerIndicator_vpiLinePageIndicatorStyle = 2;
+        /**
+          <p>
+          @attr description
+           Style of the tab indicator's tabs. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.smartroom:vpiTabPageIndicatorStyle
+        */
+        public static final int ViewPagerIndicator_vpiTabPageIndicatorStyle = 4;
+        /**
+          <p>
+          @attr description
+           Style of the title indicator. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.smartroom:vpiTitlePageIndicatorStyle
+        */
+        public static final int ViewPagerIndicator_vpiTitlePageIndicatorStyle = 3;
+        /**
+          <p>
+          @attr description
+           Style of the underline indicator. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.smartroom:vpiUnderlinePageIndicatorStyle
+        */
+        public static final int ViewPagerIndicator_vpiUnderlinePageIndicatorStyle = 5;
     };
 }

@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:background="#ff2200"
                 android:textColor="#fff"
-                android:text="Logout" />
+                android:text="@string/logged_menu_logout" />
         </RelativeLayout>
 
         <!-- Scrollable Item below header and above footer -->
@@ -85,7 +85,7 @@
                 android:id="@+id/left_drawer"
                 android:layout_width="240dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="start"
+                android:layout_gravity="start"                
                 android:background="@color/list_background"
                 android:choiceMode="singleChoice"
                 android:divider="@color/list_divider"

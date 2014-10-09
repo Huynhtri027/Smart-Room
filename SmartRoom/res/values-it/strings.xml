@@ -1,0 +1,114 @@
+<resources>
+
+    <string name="app_name">Camera Smart</string>
+    <string name="load">Caricamento in corso...</string>
+    <string name="app_id">338142736356855</string>
+    <string name="property_advert">Pubblica un annuncio su Proprietà</string>
+    <string name="advert_me">Pubblica un annuncio su me stesso</string>
+    <string name="logged_user">Membro Attività</string>
+    <string name="auth_user">Reindirizzamento... </string>
+    <string name="drawer_open">Aprire il cassetto di navigazione</string>
+    <string name="drawer_close">Chiudi cassetto navigazione</string>
+    <string name="desc_list_item_icon">Icona Elemento</string>
+    <string name="action_websearch">Ricerca Web</string>
+    <string name="app_not_available">Siamo spiacenti, non c\'è nessun browser web disponibili</string>
+    <string name="currLocation">Usa posizione corrente</string>
+    <string name="customLocation">Specificare una posizione</string>
+    <string name="allLocation">Tutto Posizione</string>
+    <string name="welcome">Benvenuti a Smart Camera Ricerca</string>
+    <string name="hSearch">Cerca Casa</string>
+    <string name="pSearch">Ricerca Persone</string>
+    <string name="appDescription">Libero APP, alla ricerca Casa Immobiliare, Casa Seeker profili e posizionare Annunci. 
+Nota: Se si desidera inserire un annuncio si prega di utilizzare le opzioni qui sotto</string>
+    <string name="copyright">© Copyright 2014 Copyright TAE Ltd 
+Tutti i diritti sono riservati</string>
+    <string name="login">Accedi</string>
+    <string name="register">Crea account</string>
+    <string name="searchHint">Indirizzo, CAP o #Ad di riferimento</string>
+    <string name="aboutUs">Gli Esperti App è la principale agenzia di sviluppo mobile app con sede a Londra. Siamo specializzati in iOS, Android e soluzioni cross-platform. Con oltre 20.000 ore di sviluppo mobile accumulati, è sicuro di dire che conosciamo apps migliore. 
+Abbiamo anche capito l\'importanza di fornire un servizio di customer centric, così abbiamo creato una metodologia mobile che i campioni di efficienza e creatività per risparmiare tempo e denaro per i clienti come te.</string>
+    <string name="whyUs">1 Prezzi: Abbiamo perfezionato le nostre attività di business in modo che possiamo concentrarci sul vostro. Lavoreremo con voi per assicurarsi di ottenere il massimo dal vostro budget. 
+2 Competenza: Il nostro team basato nel Regno Unito di oltre 25 esperti di applicazioni mobili ha complessivamente più di 20.000 ore di progetto completati. 
+3 Problem Solving: Noi sappiamo quello che serve per rompere i vostri più grandi sfide.
+4. Eccellenza: Siamo perfezionisti a cuore. La vostra soddisfazione è la nostra priorità numero uno. 
+5 Trasparenza: Crediamo che il commercio onesto funziona meglio. Ecco perché mettiamo a disposizione quotazioni Prezzi davanti quindi non ci sono sorprese. 
+6 Convenienza: Mentre molti dei nostri clienti sono qui nel Regno Unito, lavoriamo anche con i clienti in tutta l\'UE</string>
+    <string name="contact">Grazie per il vostro interesse in App Mobile servizi da parte degli esperti App. Prego sia noi suonare al numero elencato di seguito o controllare il nostro sito web.</string>
+
+    <string-array name="sellerType">
+        <item>Agenzia</item>
+        <item>Privato</item>
+        <item>Qualsiasi</item>
+    </string-array>
+    <string-array name="propertyType">
+        <item>Singolo</item>
+        <item>Doppio</item>
+        <item>Gemello</item>
+        <item>Triplo</item>
+        <item>Camera condivisa</item>
+        <item>Appartamenti</item>
+        <item>Casa</item>
+        <item>Commerciale</item>
+        <item>Fattorie / Terreni</item>
+        <item>Alloggi</item>
+        <item>Qualsiasi</item>
+    </string-array>
+    <string-array name="addedDate">
+        <item>Ultime 24 ore</item>
+        <item>Ultime 3 ore</item>
+        <item>Ultimi 7 giorni</item>
+        <item>Ultimi 14 giorni</item>
+        <item>Ultimi 30 giorni</item>
+        <item>Qualsiasi</item>
+    </string-array>
+    <string-array name="sortBy">
+        <item>Più recenti prima</item>
+        <item>I più popolari</item>
+        <item>Prezzo più alto</item>
+        <item>Prezzo più basso</item>
+    </string-array>
+    <string-array name="priceFrequency">
+        <item>Per mese di calendario</item>
+        <item>Per Settimana</item>
+    </string-array>
+    <string-array name="furnishing">
+        <item>Arredato</item>
+        <item>Parzialmente arredato</item>
+        <item>Non Arredato</item>
+    </string-array>
+    <string-array name="titles">
+        <item>Sig.</item>
+        <item>Sig.ra</item>
+        <item>Signorina</item>
+    </string-array>
+
+<!--     Non Logged User Menu -->
+    <string name="menu_home">Casa</string>
+    <string name="menu_advert">Pubblica un annuncio</string>
+    <string name="menu_preference">Preferenze</string>
+    <string name="menu_share">Condividi App</string>
+    <string name="menu_rate">Vota App</string>
+    <string name="menu_help">Aiuto</string>
+    <string name="menu_about">Chi siamo</string>
+    <string name="menu_contact">Contattaci</string>
+
+<!--     Logged User Menu -->
+    <string name="logged_menu_message">Messaggi</string>
+    <string name="logged_menu_search">Ricerca</string>
+    <string name="logged_menu_advert">Pubblica un annuncio</string>
+    <string name="logged_menu_myAdverts">I miei Annunci</string>
+    <string name="logged_menu_savedAds">Annunci salvati</string>
+    <string name="logged_menu_edit">Modifica profilo</string>
+    <string name="logged_menu_preference">Preferenze</string>
+    <string name="logged_menu_rate">Vota App</string>
+    <string name="logged_menu_help">Aiuto</string>
+    <string name="logged_menu_about">Chi siamo</string>
+    <string name="logged_menu_contact">Contattaci</string>
+    <string name="logged_menu_logout">Esci</string>
+
+    <!-- Other Logged User Properties -->
+
+    <string name="logged_menu_propertyAdvert">Pubblicità Proprietà</string>
+    <string name="logged_menu_peopleAdvert">Pubblica me stesso</string>
+
+</resources>

@@ -128,32 +128,34 @@ public class MainActivity extends Activity {
 
 				Fragment newFragment = null;
 
-				if (menu.getText().toString().equals("Home")) {
+				if (menu.getText().toString()
+						.equals(getResources().getString(R.string.menu_home))) {
 					newFragment = new HomeFragment();
 
 					FragmentManagerHelper.replaceFragment(newFragment);
 					FragmentManagerHelper.setCurrentFragment(newFragment);
 					FragmentManagerHelper.setFragmentType("NORMAL");
 
-				} else if (menu.getText().toString().equals("About Us")) {
+				} else if (menu.getText().toString()
+						.equals(getResources().getString(R.string.menu_about))) {
 
 					newFragment = new AboutFragment();
 					changeFragment(newFragment);
 					FragmentManagerHelper.setCurrentFragment(newFragment);
 					FragmentManagerHelper.setFragmentType("NORMAL");
 
-				} else if (menu.getText().toString().equals("Contact Us")) {
+				} else if (menu
+						.getText()
+						.toString()
+						.equals(getResources().getString(R.string.menu_contact))) {
 
 					newFragment = new ContactFragment();
 					changeFragment(newFragment);
 					FragmentManagerHelper.setCurrentFragment(newFragment);
 					FragmentManagerHelper.setFragmentType("NORMAL");
 
-				} else if (menu.getText().toString().equals("Share App")) {
-
-					// Intent intent = new Intent(Intent.ACTION_PICK,
-					// ContactsContract.Contacts.CONTENT_URI);
-					// startActivityForResult(intent, 0);
+				} else if (menu.getText().toString()
+						.equals(getResources().getString(R.string.menu_share))) {
 
 					Intent sharingIntent = new Intent(
 							android.content.Intent.ACTION_SEND);
@@ -168,7 +170,8 @@ public class MainActivity extends Activity {
 
 				}
 
-				else if (menu.getText().toString().equals("Rate App")) {
+				else if (menu.getText().toString()
+						.equals(getResources().getString(R.string.menu_rate))) {
 
 					final String my_package_name = "com.smartroom";
 					String url = "";
@@ -190,7 +193,8 @@ public class MainActivity extends Activity {
 
 				}
 
-				else if (menu.getText().toString().equals("Help")) {
+				else if (menu.getText().toString()
+						.equals(getResources().getString(R.string.menu_help))) {
 
 					newFragment = new HelpFragment();
 					changeFragment(newFragment);
@@ -199,14 +203,19 @@ public class MainActivity extends Activity {
 
 				}
 
-				else if (menu.getText().toString().equals("Preferences")) {
+				else if (menu
+						.getText()
+						.toString()
+						.equals(getResources().getString(
+								R.string.menu_preference))) {
 
 					newFragment = new PreferenceFragment();
 					changeFragment(newFragment);
 					FragmentManagerHelper.setCurrentFragment(newFragment);
 					FragmentManagerHelper.setFragmentType("NORMAL");
 
-				} else if (menu.getText().toString().equals("Place Advert")) {
+				} else if (menu.getText().toString()
+						.equals(getResources().getString(R.string.menu_advert))) {
 
 					newFragment = new AskToLoginFragment();
 					changeFragment(newFragment);

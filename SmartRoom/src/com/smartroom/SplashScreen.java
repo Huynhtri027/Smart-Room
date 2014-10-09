@@ -1,17 +1,22 @@
 package com.smartroom;
 
-import android.app.Activity;
+import roboguice.activity.RoboActivity;
+import roboguice.inject.InjectView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.smartroom.activity.MainActivity;
 import com.smartroom.activity.MemberActivity;
 
-public class SplashScreen extends Activity {
+public class SplashScreen extends RoboActivity {
+
+	private @InjectView(R.id.load_textview)
+	TextView welcomeText;
 
 	private ProgressBar spinner = null;
 
@@ -38,7 +43,6 @@ public class SplashScreen extends Activity {
 						e.printStackTrace();
 					}
 
-					// Update the progress bar
 					handler.post(new Runnable() {
 						public void run() {
 							spinner.setProgress(progressStatus);

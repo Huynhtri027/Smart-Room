@@ -11,7 +11,7 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/welcomeAppNames"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -28,21 +28,27 @@
             android:layout_margin="10dp" >
 
             <RadioButton
-                android:id="@+id/radio0"
+                android:id="@+id/allRadio"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/currLocation" />
+                android:layout_height="wrap_content"                
+                android:text="@string/allLocation"
+                android:checked="true" />
 
             <RadioButton
-                android:id="@+id/radio1"
+                android:id="@+id/customRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/customLocation" />
+
+            <RadioButton
+                android:id="@+id/currRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currLocation" />
         </RadioGroup>
 
         <EditText
-            android:id="@+id/searchLocation"
+            android:id="@+id/homesearchLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -126,8 +132,8 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
             android:layout_gravity="center"
+            android:layout_margin="20dp"
             android:gravity="center"
             android:text="@string/copyright"
             android:textAppearance="?android:attr/textAppearanceSmall" />

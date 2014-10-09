@@ -58,11 +58,6 @@ public class PreferenceFragment extends Fragment {
 		maxBed.setText(preference.getMaxBed());
 		searchDistance.setText(preference.getSearchDistance());
 
-		
-		Toast.makeText(getActivity(), preference.getPriceFrequency(), Toast.LENGTH_LONG).show();
-		
-		
-		
 		arrayAdapter = (ArrayAdapter) sellerType.getAdapter();
 		pos = arrayAdapter.getPosition(preference.getSellerType());
 		sellerType.setSelection(pos);

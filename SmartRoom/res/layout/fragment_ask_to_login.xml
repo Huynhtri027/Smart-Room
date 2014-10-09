@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scrollView1"
+    android:id="@+id/askAdvertScrollView"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#d7e7ff" >
@@ -8,61 +8,70 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#d7e7ff"
-        android:layout_gravity="center"
         android:orientation="vertical" >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
             <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="3dp"
-        android:text="You have to login to Post and Advert. Please use one of the option below"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#e60072" />
-        
-        <Button
-            android:id="@+id/askLoginBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/custom_button_border"
-            android:gravity="center"
-            android:text="@string/login"
-            android:textColor="#fff" />
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="You have to login to Post and Advert. Please use one of the option below"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#e60072" />
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:layout_margin="5dp"
-            android:background="#111" />
+            <Button
+                android:id="@+id/askLoginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/custom_button_border"
+                android:gravity="center"
+                android:text="@string/login"
+                android:textColor="#fff" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="or"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_margin="5dp"
+                android:background="#111" />
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:layout_margin="5dp"
-            android:background="#111" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="or"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <Button
-            android:id="@+id/askCreateAccountButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/custom_button_border"
-            android:gravity="center"
-            android:text="@string/register"
-            android:textColor="#fff" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_margin="5dp"
+                android:background="#111" />
+
+            <Button
+                android:id="@+id/askCreateAccountButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/custom_button_border"
+                android:gravity="center"
+                android:text="@string/register"
+                android:textColor="#fff" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView1ADV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
-
-
 
 </ScrollView>
