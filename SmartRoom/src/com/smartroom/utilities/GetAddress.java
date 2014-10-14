@@ -12,10 +12,32 @@ import android.widget.Toast;
 
 import com.smartroom.model.LatitudeLocationModel;
 
+/**
+ * GetAddress.java
+ * 
+ * Purpose: To get values from postocode to Latitude/Longitude and Viceversa
+ * 
+ * @author Filippo Engidashet
+ * @version 1.0
+ * @since 2014-10-14
+ */
+
 public class GetAddress {
 
 	private static LatitudeLocationModel LatLon = null;
 
+	/**
+	 * This method takes three parameters and displays Address details
+	 * 
+	 * @param context
+	 *            set the Application Context to create a Geocoder instance
+	 * @param latitude
+	 *            the latitude value of the address
+	 * @param longitude
+	 *            the longitude value of the address
+	 * @return void
+	 * @see Address
+	 */
 	public static void showAddress(Context context, double latitude,
 			double longitude) {
 		Geocoder geoCoder = new Geocoder(context, Locale.getDefault());
@@ -55,6 +77,23 @@ public class GetAddress {
 		}
 
 	}
+
+	/**
+	 * Returns an LatitudeLocationModel object that can then be used to get
+	 * Latitude and Longitude from a postcode. The mContext argument must
+	 * specify the application Context. The postcode argument is a specifier of
+	 * specific postcode.
+	 * <p>
+	 * This method always returns immediately, whether or not the Latitude and
+	 * Longitude exists.
+	 * 
+	 * @param context
+	 *            set the Application Context to create a Geocoder instance
+	 * @param postcode
+	 *            the postcode value of the address
+	 * @return LatitudeLocationModel
+	 * @see Geocoder
+	 */
 
 	public static LatitudeLocationModel postcodeToLatLon(Context mContext,
 			String postcode) {

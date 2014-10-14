@@ -37,7 +37,24 @@ import com.smartroom.view.HomeFragment;
 import com.smartroom.view.NoNetwork;
 import com.smartroom.view.PreferenceFragment;
 
+/**
+ * MainActivity.java
+ * 
+ * Purpose: This is the main class that manages the interaction between
+ * different fragments before a user logs into his/her account. It allows the
+ * flow of different screen based on the menu provided by a left drawer
+ * navigation and different button options.
+ * 
+ * @author Filippo Engidashet
+ * @version 1.0
+ * @since 2014-10-14
+ */
+
 public class MainActivity extends Activity {
+
+	/**
+	 * Represents various member variable declarations.
+	 */
 
 	private DrawerLayout drawerLayout;
 	private ListView drawerListView;
@@ -57,10 +74,25 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		/**
+		 * Setting this Current Class Activity Application Context to the static
+		 * method found in Utils.java.
+		 */
 		Utils.setCurrentActivity(MainActivity.this);
 		Utils.setMainContext(MainActivity.this);
 
+		/**
+		 * Populate the left Navigation drawer Menu from GuestMenu.java
+		 * getMenuList mehod.
+		 */
+
 		menu = GuestMenu.getMenuList(getResources());
+
+		/**
+		 * Allow the application to execute properly, and not being aborted by
+		 * thread Policy Permission security failure.
+		 */
+
 		final StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
 				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);

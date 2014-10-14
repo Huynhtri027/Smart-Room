@@ -85,6 +85,7 @@ public class ViewAdvertActivity extends Activity {
 	private GoogleMap map;
 	private ArrayList<LatLng> markerPoints;
 	private static String mode = "walking";
+	private GPSTrackerService gps = null;
 
 	LatitudeLocationModel postcodeLocation = null;
 	Handler handler = new Handler();
@@ -264,8 +265,7 @@ public class ViewAdvertActivity extends Activity {
 				double currLongitude = 0.0;
 
 				try {
-					GPSTrackerService gps = new GPSTrackerService(
-							ViewAdvertActivity.this);
+					gps = new GPSTrackerService(ViewAdvertActivity.this);
 					currLatitude = (double) gps.getLatitude();
 					currLongitude = (double) gps.getLongitude();
 				} catch (Exception e) {

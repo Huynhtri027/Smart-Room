@@ -61,7 +61,7 @@ public class SearchHouseActivity extends Activity {
 		setContentView(R.layout.activity_house_search_result);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-		
+
 		Intent intent = getIntent();
 		searchVal = intent.getStringExtra("searchValue");
 
@@ -94,6 +94,14 @@ public class SearchHouseActivity extends Activity {
 		});
 
 	}
+
+	/**
+	 * This is the fetchPropertyResult method which shows a ProgressDialog while
+	 * fetching JSON data from Apache MySQL Server.
+	 * 
+	 * @return void.
+	 * 
+	 */
 
 	public void fetchPropertyResult() {
 
@@ -168,7 +176,7 @@ public class SearchHouseActivity extends Activity {
 									count++;
 
 								}
-								if(count == 0) {
+								if (count == 0) {
 									Toast.makeText(
 											Utils.getCurrentActivity(),
 											"Sorry No Property Search Results Found!",
@@ -211,15 +219,12 @@ public class SearchHouseActivity extends Activity {
 				params.put("sortBy", preference.getSortBy());
 				params.put("priceFrequency", preference.getPriceFrequency());
 
-				Log.e("TAG_FILIPPO", "Min Price: "
-						+ preference.getMinPrice().toString());
-
 				return params;
 			}
 		};
 
 		mQueue.add(postRequest);
-		
+
 	}
 
 	private void setUpViews() {
