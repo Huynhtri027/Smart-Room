@@ -52,6 +52,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -221,13 +222,22 @@ public class ViewAdvertActivity extends Activity {
 
 			if (map != null) {
 
+				map.clear();
+				
 				map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 				map.setMyLocationEnabled(true);
-				map.moveCamera(CameraUpdateFactory.newLatLngZoom(
-						new LatLng(postcodeLocation.getLatitude(),
-								postcodeLocation.getLongitude()), 16));
+				map.getUiSettings().setZoomControlsEnabled(true);
+				map.getUiSettings().setZoomGesturesEnabled(true);
+				map.getUiSettings().setCompassEnabled(true);
 
-				map.clear();
+				LatLng latLng = new LatLng(postcodeLocation.getLatitude(),
+						postcodeLocation.getLongitude());
+				
+				
+				CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(13)
+						.build();
+
+				map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
 				map.addMarker(new MarkerOptions()
 						.title("Address: " + viewProperty.getAddress() + " \n"
@@ -239,6 +249,8 @@ public class ViewAdvertActivity extends Activity {
 								new LatLng(postcodeLocation.getLatitude(),
 										postcodeLocation.getLongitude())));
 
+
+				
 				addMakerEvent();
 
 			} else {
@@ -377,34 +389,31 @@ public class ViewAdvertActivity extends Activity {
 
 		markerPoints = new ArrayList<LatLng>();
 
-		RelativeLayout rl = (RelativeLayout) findViewById(R.id.relativeLayout1);
-		rl.setOnTouchListener(new View.OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				int action = event.getAction();
-				switch (action) {
-				case MotionEvent.ACTION_DOWN:
-					// Disallow ScrollView to intercept touch events.
-					sv.requestDisallowInterceptTouchEvent(true);
-					// Disable touch on transparent view
-					return false;
-
-				case MotionEvent.ACTION_UP:
-					// Allow ScrollView to intercept touch events.
-					sv.requestDisallowInterceptTouchEvent(false);
-					return true;
-
-				case MotionEvent.ACTION_MOVE:
-					sv.requestDisallowInterceptTouchEvent(true);
-					return false;
-
-				default:
-					return true;
-				}
-			}
-		});
-
+		ImageView transparentImageView = (ImageView) findViewById(R.id.transparent_image);
+		 
+		transparentImageView.setOnTouchListener(new View.OnTouchListener() { 
+		 
+		    @Override 
+		    public boolean onTouch(View v, MotionEvent event) {
+		        int action = event.getAction();
+		        switch (action) {
+		           case MotionEvent.ACTION_DOWN:
+		        	   sv.requestDisallowInterceptTouchEvent(true);
+		                return false; 
+		 
+		           case MotionEvent.ACTION_UP:
+		        	   sv.requestDisallowInterceptTouchEvent(false);
+		                return true; 
+		 
+		           case MotionEvent.ACTION_MOVE:
+		        	   sv.requestDisallowInterceptTouchEvent(true);
+		                return false; 
+		 
+		           default:  
+		                return true; 
+		        }    
+		    } 
+		}); 
 	}
 
 	@Override

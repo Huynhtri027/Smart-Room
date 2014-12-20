@@ -1,3 +1,5 @@
+CREATE DATABASE  `smartroom` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
 CREATE TABLE IF NOT EXISTS `profile` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `full_name` varchar(100) NOT NULL,
@@ -49,7 +51,7 @@ CREATE TABLE IF NOT EXISTS  `advert_messages` (
  `messageID` INT( 11 ) NOT NULL AUTO_INCREMENT ,
  `sender_id` VARCHAR( 100 ) NOT NULL ,
  `advert_ref_id` VARCHAR( 100 ) NOT NULL ,
- `message` VARCHAR( 100 ) NOT NULL ,
+ `message` TEXT NOT NULL ,
  `status` VARCHAR( 100 ) NOT NULL ,
  `notified` VARCHAR( 100 ) NOT NULL ,
  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,

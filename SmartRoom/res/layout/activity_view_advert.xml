@@ -26,6 +26,24 @@
             android:layout_height="match_parent"
             android:orientation="vertical" >
 
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="250dp" >
+
+                <fragment
+                    android:id="@+id/viewAdvertMap"
+                    android:name="com.google.android.gms.maps.MapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:id="@+id/transparent_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent" />
+            </RelativeLayout>
+
             <ImageView
                 android:id="@+id/viewAdvertPic"
                 android:layout_width="match_parent"
@@ -123,18 +141,6 @@
                         android:textColor="#2882FF" />
                 </LinearLayout>
             </LinearLayout>
-
-            <RelativeLayout
-                android:id="@+id/relativeLayout1"
-                android:layout_width="match_parent"
-                android:layout_height="250dp" >
-
-                <fragment
-                    android:id="@+id/viewAdvertMap"
-                    android:name="com.google.android.gms.maps.MapFragment"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" />
-            </RelativeLayout>
 
             <TextView
                 android:id="@+id/textView1"

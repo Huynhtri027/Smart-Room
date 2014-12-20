@@ -1,12 +1,10 @@
 <?php
 
+include "db.php";
+
 $response = array();
 
 $email = $_POST['email'];
-
-mysql_connect('localhost', 'root', '') or die("Cannot connect to Server! " . mysql_error());
-
-$db = mysql_select_db('smartroom') or die("Cannot connect to Database! " . mysql_error());
 
 $query = mysql_query("SELECT * FROM `property_advert` WHERE email_id = '$email'");
 if ($query) {

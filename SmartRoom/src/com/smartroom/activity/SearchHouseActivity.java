@@ -49,7 +49,7 @@ public class SearchHouseActivity extends Activity {
 	private TextView houseSearchResultCount = null;
 	private DBHelper dbHelper = null;
 	private FilterPreferenceModel preference = null;
-	private String searchVal = null;
+	private String searchVal = "";
 	private int count = 0;
 
 	ImageButton refresh = null;
@@ -207,17 +207,71 @@ public class SearchHouseActivity extends Activity {
 			protected Map<String, String> getParams() {
 				Map<String, String> params = new HashMap<String, String>();
 
-				params.put("searchValue", searchVal);
-				params.put("minPrice", preference.getMinPrice());
-				params.put("maxPrice", preference.getMaxPrice());
-				params.put("minBed", preference.getMinBed());
-				params.put("maxBed", preference.getMaxBed());
-				params.put("sellerType", preference.getSellerType());
-				params.put("propertyType", preference.getPropertyType());
-				params.put("searchDistance", preference.getSearchDistance());
-				params.put("addedDate", preference.getAddedDate());
-				params.put("sortBy", preference.getSortBy());
-				params.put("priceFrequency", preference.getPriceFrequency());
+				if (searchVal == null) {
+					params.put("searchValue", "");
+				} else {
+					params.put("searchValue", searchVal);
+				}
+
+				if (preference.getMinPrice() == null) {
+					params.put("minPrice", "");
+				} else {
+					params.put("minPrice", preference.getMinPrice());
+				}
+
+				if (preference.getMaxPrice() == null) {
+					params.put("maxPrice", "");
+				} else {
+					params.put("maxPrice", preference.getMaxPrice());
+				}
+
+				if (preference.getMinBed() == null) {
+					params.put("minBed", "");
+				} else {
+					params.put("minBed", preference.getMinBed());
+				}
+
+				if (preference.getMaxBed() == null) {
+					params.put("maxBed", "");
+				} else {
+					params.put("maxBed", preference.getMaxBed());
+				}
+
+				if (preference.getSellerType() == null) {
+					params.put("sellerType", "");
+				} else {
+					params.put("sellerType", preference.getSellerType());
+				}
+
+				if (preference.getPropertyType() == null) {
+					params.put("propertyType", "");
+				} else {
+					params.put("propertyType", preference.getPropertyType());
+				}
+
+				if (preference.getSearchDistance() == null) {
+					params.put("searchDistance", "");
+				} else {
+					params.put("searchDistance", preference.getSearchDistance());
+				}
+
+				if (preference.getAddedDate() == null) {
+					params.put("addedDate", "");
+				} else {
+					params.put("addedDate", preference.getAddedDate());
+				}
+
+				if (preference.getSortBy() == null) {
+					params.put("sortBy", "");
+				} else {
+					params.put("sortBy", preference.getSortBy());
+				}
+
+				if (preference.getPriceFrequency() == null) {
+					params.put("priceFrequency", "");
+				} else {
+					params.put("priceFrequency", preference.getPriceFrequency());
+				}
 
 				return params;
 			}

@@ -1,13 +1,11 @@
 <?php
 
+include "db.php";
+
 $response["messages"] = array();
 $message = array();
 
 $email = $_POST['email'];
-
-mysql_connect('localhost', 'root', '') or die("Cannot connect to Server! " . mysql_error());
-
-$db = mysql_select_db('smartroom') or die("Cannot connect to Database! " . mysql_error());
 
 $query = mysql_query("SELECT * FROM `property_advert` WHERE email_id = '$email'");
 if ($query) {
@@ -30,7 +28,7 @@ if ($query) {
                     $message["messageID"] = $row2["messageID"];
                     $message["sender_id"] = $row2["sender_id"];
                     $message["advert_ref_id"] = $row2["advert_ref_id"];
-					$message["date"] = $row2["created_at"];					
+                    $message["date"] = $row2["created_at"];
 
                     array_push($response["messages"], $message);
                 }

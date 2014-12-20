@@ -367,7 +367,8 @@ public class MemberActivity extends FragmentActivity {
 					String id = userProfile.getId();
 					try {
 						Bitmap bitmap = Utils.getFacebookProfilePicture(id);
-						profilePic.setImageBitmap(bitmap);
+						profilePic.setImageBitmap(Utils.getCircleBitmap(bitmap));
+						//profilePic.setImageBitmap(bitmap);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}

@@ -1,5 +1,7 @@
 <?php
 
+include "db.php";
+
 $response = array();
 
 if (isset($_POST['email']) || isset($_POST['rent_amount']) || isset($_POST['postcode']) || isset($_POST['address']) || isset($_POST['title']) || isset($_POST['description'])) {
@@ -32,21 +34,16 @@ if (isset($_POST['email']) || isset($_POST['rent_amount']) || isset($_POST['post
     $garden = $_POST['garden'];
     $parking = $_POST['parking'];
     $reference = $_POST['reference'];
-	
-	$base = $_POST['image'];
+
+    $base = $_POST['image'];
     $buffer = base64_decode($base);
 
     $buffer = mysql_real_escape_string($buffer);
 
-
-   mysql_connect('localhost', 'root', '') or die("Cannot connect to Server! ".mysql_error());
-
-	$db = mysql_select_db('smartroom') or die("Cannot connect to Database! ".mysql_error());
-
     // mysql inserting a new row
     $result = mysql_query("INSERT INTO `property_advert`(`email_id`, `seller_type`, `bed_num`, `property_type`, `rent_amount`, `price_frequency`, `deposit_amount`, `postcode`, `address`, `country`, `furnishing`, `available_date`, `reference_required`, `image`, `parking_available`, `garden_available`, `garage_available`, `balcony_available`, `disabled_access_available`, `broadband_available`, `bill_included`, `advertiser_title`, `advert_title`, `advert_description`, `advertiser_fullname`, `display_name`, `advertiser_telephone`, `display_telephone`, `created_at`) VALUES('$email','$seller_type', '$bed_num', '$property_type', '$rent_amount', '$price_frequency', '$deposit', '$postcode', '$address', '$country', '$furnishing', '$availability_date', '$reference', '$buffer', '$parking', '$garden', '$garage', '$balcony', '$disabled_access', '$broadband', '$bill_included', '$advertiser_title', '$title', '$description', '$fullname', '$display_fullname', '$telephone', '$display_telephone', NOW())");
-	
-	
+
+
     // check if row inserted or not
     if ($result) {
         // successfully inserted into database
@@ -55,24 +52,23 @@ if (isset($_POST['email']) || isset($_POST['rent_amount']) || isset($_POST['post
 
         // echoing JSON response
         //echo json_encode($response);
-		echo "1";
+        echo "1";
     } else {
         // failed to insert row
         $response["success"] = 0;
         $response["message"] = "Oops! An error occurred.";
-        
+
         // echoing JSON response
-		echo "0";
+        echo "0";
         //echo json_encode($response);
     }
 } else {
     // required field is missing
     $response["success"] = 0;
-    $response["message"] = "Required field(s) is missing";	
-	
+    $response["message"] = "Required field(s) is missing";
+
     // echoing JSON response
     //echo json_encode($response);
-	echo "0";
+    echo "0";
 }
-
 ?>

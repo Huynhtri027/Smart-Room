@@ -1,8 +1,6 @@
 <?php
 
-mysql_connect('localhost', 'root', '') or die("Cannot connect to Server! " . mysql_error());
-
-$db = mysql_select_db('smartroom') or die("Cannot connect to Database! " . mysql_error());
+include "db.php";
 
 $count = 0;
 
@@ -25,9 +23,9 @@ if (isset($_POST['maxPrice'])) {
         if ($count == 0) {
             $tempQuery = $tempQuery . " where ";
         }
-		if($count > 0) {
-		$tempQuery = $tempQuery . " and ";
-		}
+        if ($count > 0) {
+            $tempQuery = $tempQuery . " and ";
+        }
         $count++;
         $tempQuery = $tempQuery . " rent_amount <= " . $_POST['maxPrice'];
     }
@@ -40,9 +38,9 @@ if (isset($_POST['minBed'])) {
         if ($count == 0) {
             $tempQuery = $tempQuery . " where ";
         }
-		if($count > 0) {
-		$tempQuery = $tempQuery . " and ";
-		}
+        if ($count > 0) {
+            $tempQuery = $tempQuery . " and ";
+        }
         $count++;
         $tempQuery = $tempQuery . " bed_num >= " . $_POST['minBed'];
     }
@@ -55,9 +53,9 @@ if (isset($_POST['maxBed'])) {
         if ($count == 0) {
             $tempQuery = $tempQuery . " where ";
         }
-		if($count > 0) {
-		$tempQuery = $tempQuery . " and ";
-		}
+        if ($count > 0) {
+            $tempQuery = $tempQuery . " and ";
+        }
         $count++;
         $tempQuery = $tempQuery . " bed_num <= " . $_POST['maxBed'];
     }
@@ -69,15 +67,15 @@ if (isset($_POST['searchValue'])) {
         if ($count == 0) {
             $tempQuery = $tempQuery . " where ";
         }
-		if($count > 0) {
-		$tempQuery = $tempQuery . " and ";
-		}
+        if ($count > 0) {
+            $tempQuery = $tempQuery . " and ";
+        }
         $count++;
-        $tempQuery = $tempQuery . " `advert_reference` = '" . str_replace("#","",$_POST['searchValue']). "' or `postcode` = '" . $_POST['searchValue']. "' or `address` = '" . $_POST['searchValue']."'";
+        $tempQuery = $tempQuery . " `advert_reference` = '" . str_replace("#", "", $_POST['searchValue']) . "' or `postcode` = '%" . $_POST['searchValue'] . "%' or `address` = '%" . $_POST['searchValue'] . "%'";
     }
-	}
+}
 
-$tempQuery = $tempQuery." ORDER BY `advert_reference` DESC";
+$tempQuery = $tempQuery . " ORDER BY `advert_reference` DESC";
 $query = mysql_query($tempQuery);
 
 if ($query) {

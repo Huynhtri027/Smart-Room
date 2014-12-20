@@ -1,19 +1,14 @@
 <?php
 
- $messageID = $_POST['messageID'];
+include "db.php";
 
-  mysql_connect('localhost', 'root', '') or die("Cannot connect to Server! ".mysql_error());
-  
-  $db = mysql_select_db('smartroom') or die("Cannot connect to Database! ".mysql_error());
+$messageID = $_POST['messageID'];
 
-  $query = mysql_query("UPDATE `advert_messages` SET notified = 'YES' WHERE messageID = '$messageID'");
-  
-  if($query){
-  echo "1";
-  }
-  else {
-  echo "0";
-  }
-  
+$query = mysql_query("UPDATE `advert_messages` SET notified = 'YES' WHERE messageID = '$messageID'");
 
+if ($query) {
+    echo "1";
+} else {
+    echo "0";
+}
 ?>

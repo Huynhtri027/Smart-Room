@@ -27,8 +27,9 @@ public class AuthenticationController {
 	private static JSONObject jresponse;
 
 	public static void checkLogin(final String email, final String password) {
-		
-		final ProgressDialog pDialog = new ProgressDialog(Utils.getCurrentActivity());
+
+		final ProgressDialog pDialog = new ProgressDialog(
+				Utils.getCurrentActivity());
 		pDialog.setMessage("Logging In ...");
 		pDialog.show();
 
@@ -127,23 +128,42 @@ public class AuthenticationController {
 
 						Log.d("Response", response);
 
+						try {
+							jresponse = new JSONObject(response);
+
+							if (jresponse.getString("success").equals("0")) {
+								Toast.makeText(Utils.getMainContext(),
+										"" + jresponse.getString("message"),
+										Toast.LENGTH_LONG).show();
+								pDialog.hide();
+								return;
+							} else {
+								Toast.makeText(Utils.getMainContext(),
+										"Registered Successfully!",
+										Toast.LENGTH_SHORT).show();
+
+								userProfile = user;
+
+								SessionController.setUserProfile(userProfile);
+								SessionController.sessionStart(Utils
+										.getCurrentActivity());
+
+								Intent loginIntent = new Intent(
+										Utils.getMainContext(),
+										MemberActivity.class);
+
+								Utils.getMainContext().startActivity(
+										loginIntent);
+								Utils.getCurrentActivity().finish();
+							}
+
+						} catch (JSONException e) {
+							Log.e("Volley Error", e.getMessage());
+							e.printStackTrace();
+						}
+
 						pDialog.hide();
 
-						Toast.makeText(Utils.getMainContext(),
-								"Registered Successfully!", Toast.LENGTH_SHORT)
-								.show();
-
-						userProfile = user;
-
-						SessionController.setUserProfile(userProfile);
-						SessionController.sessionStart(Utils
-								.getCurrentActivity());
-
-						Intent loginIntent = new Intent(Utils.getMainContext(),
-								MemberActivity.class);
-
-						Utils.getMainContext().startActivity(loginIntent);
-						Utils.getCurrentActivity().finish();
 					}
 				}, new Response.ErrorListener() {
 					@Override

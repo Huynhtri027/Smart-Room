@@ -13,6 +13,13 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.provider.MediaStore;
@@ -47,9 +54,10 @@ public class Utils {
 
 	/**
 	 * Represents a base url for web services.
+	 * You can replace the base URL by ip address or other domain name
 	 */
 
-	public static String BASE_URL = "http://10.0.16.26/smartroom/";
+	public static String BASE_URL = "http://ethiosurf.com/smartroom/";
 
 	/**
 	 * Represents a various Service URLs used for web services.
@@ -325,6 +333,42 @@ public class Utils {
 	 */
 	public static Bitmap getPhoto(byte[] image) {
 		return BitmapFactory.decodeByteArray(image, 0, image.length);
+	}
+	
+	
+	/**
+	 * This method takes one parameters and returns Bitmap
+	 * 
+	 * @param bitmap
+	 *            creates a new rounded bitmap from the given bitmap 
+	 * @return Bitmap
+	 * 
+	 * @see Paint
+	 * @see Canvas
+	 * @see Rect
+	 * @see RectF
+	 */
+	public static Bitmap getCircleBitmap(Bitmap bitmap) {
+		final Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
+				bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+		final Canvas canvas = new Canvas(output);
+
+		final int color = Color.RED;
+		final Paint paint = new Paint();
+		final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+		final RectF rectF = new RectF(rect);
+
+		paint.setAntiAlias(true);
+		canvas.drawARGB(0, 0, 0, 0);
+		paint.setColor(color);
+		canvas.drawOval(rectF, paint);
+
+		paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+		canvas.drawBitmap(bitmap, rect, rect, paint);
+
+		bitmap.recycle();
+
+		return output;
 	}
 
 }

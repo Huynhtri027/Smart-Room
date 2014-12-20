@@ -111,15 +111,17 @@ public class PropertyAdvertStep2Fragment extends Fragment {
 		setAvailabilityDateBtn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				DatePickerDialog dp = new DatePickerDialog(getActivity(),
-						mDateSetListener, mYear, mMonth, mDay);
-				dp.show();
 
 				final Calendar c = Calendar.getInstance();
 				mYear = c.get(Calendar.YEAR);
 				mMonth = c.get(Calendar.MONTH);
 				mDay = c.get(Calendar.DAY_OF_MONTH);
 				updateDisplay();
+				
+				DatePickerDialog dp = new DatePickerDialog(getActivity(),
+						mDateSetListener, mYear, mMonth, mDay);
+				dp.show();
+				
 			}
 		});
 
